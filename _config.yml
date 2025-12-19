@@ -1,4 +1,43 @@
 # _config.yml
+
+# Site settings
+title: Samuele Amato
+description: Low-level dev building tools in C, Rust, and more.
+url: "https://samueleamato.xyz"
+baseurl: "" # Se il sito è in una sottocartella, metti "/nome-cartella"
+
+# Author
+author:
+  name: Samuele Amato
+  email: samuele@samueleamato.xyz
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:day/:title
+
+# Plugins
 plugins:
   - jekyll-feed
 
+# Collections (opzionale)
+collections:
+  posts:
+    output: true
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .git
+  - README.md
