@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon" />
+  <link rel="stylesheet" href="https://unpkg.com/bluesky-comments@0.8.0/dist/bluesky-comments.css">
+  <title>Samuele Amato | {{ page.title }}</title>
+  <meta property="og:image" content="{{ page.image }}" />
+  <meta name="fediverse:creator" content="@rdwei@mastodon.social">
+  <style>
+    @font-face {
+      font-family: 'Departure Mono';
+      src: url('{{ "/fonts/DepartureMono-1.500/DepartureMono-Regular.woff2" | relative_url }}') format('woff2'),
+           url('{{ "/fonts/DepartureMono-1.500/DepartureMono-Regular.woff" | relative_url }}') format('woff'),
+           url('{{ "/fonts/DepartureMono-1.500/DepartureMono-Regular.otf" | relative_url }}') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+.post-cover-image {
+  text-align: center; /* centra l'immagine */
+  margin: 1.5rem 0;   /* spazio sopra e sotto */
+}
+
+.post-cover-image img {
+  max-width: 400px;    /* larghezza massima media-piccola */
+  width: 100%;         /* responsive su schermi piccoli */
+  height: auto;        /* mantiene proporzioni */
+  border-radius: 4px;  /* leggermente arrotondata, opzionale */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* ombra leggera, opzionale */
+}
+
+
+    body {
+      cursor: url('/assets/cursor/cursor.cur'), auto;
+      font-family: 'Departure Mono', monospace;
+      background: black;
+      color: #e2e2e2;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      /* transform: scale(1.15); */
+      transform-origin: 0 0;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+
+    header {
+      cursor: url('/assets/cursor/cursor.cur'), pointer;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 1rem;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 10px; 
+      margin: auto;
+      background-color: #fabd2f;
+    }
+
+    header a {
+      font-weight: 700;
+      color: black;
+      text-decoration: underline;
+      font-style: italic
+      font-size: 1.0rem;
+      position: relative;
+      z-index: 1;
+      font-family: 'Departure Mono', monospace;
+    }
+
+    header a:hover {
+      cursor: url('/assets/cursor/hover.cur'), pointer;
+      /* background-color: black;
+       color: #fabd2f */
+    }
+
+    h1.post-title {
+      font-size: 2rem;
+      margin: 2rem auto 0.5rem;
+      max-width: 65ch;
+      text-align: center;
+      color: #fabd2f;
+      font-weight: 700;
+      padding-bottom: 0.3em;
+      border-bottom: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .post-date {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 2.5rem;
+      font-family: 'Departure Mono', monospace;
+      opacity: 0.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    h2, h3, h4, h5, h6 {
+      max-width: 65ch;
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.2em;
+      border-bottom: none;
+      text-align: left;
+      color: #fabd2f;
+      position: relative;
+      z-index: 1;
+      font-family: 'Departure Mono', monospace;
+      font-weight: 600;
+    }
+
+	nav a {
+	  margin-right: 20px; /* spazio tra i link */
+	}
+
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 2rem;
+      height: 2px;
+      background: rgba(250,189,47,0.5);
+    }
+
+    main {
+      max-width: 60em;
+      margin: auto;
+      padding: 0 1.2rem;
+      position: relative;
+      z-index: 1;
+      font-family: 'Departure Mono', monospace;
+      font-size: 1.05rem;
+    }
+
+    p {
+      margin: 1.2rem 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1rem;
+      color: #888;
+      font-size: 0.9rem;
+      font-family: 'Departure Mono', monospace;
+      position: relative;
+      z-index: 1;
+    }
+
+    a {
+      color: #83a598;
+      text-decoration: none;
+    }
+
+    a:hover {
+      cursor: url('/assets/cursor/hover.cur'), pointer;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+  <nav>
+	  <a href="{{ '/' | relative_url }}">Home</a>
+	  <a href="https://samueleamato.xyz/feed.xml">(RSS)</a>
+	  <a href="/about">About &amp; Contacts</a>
+	  <a href="/resume">CV</a>
+	  <a href="https://samueleamato.xyz/#my-projects">Projects</a>
+	</nav>
+  </header>
+
+{% if page.title %}
+  <h1 class="post-title">{{ page.title }}</h1>
+  {% if page.date %}
+    <p class="post-date">{{ page.date | date: "%B %-d, %Y" }}</p>
+  {% endif %}
+
+  {% if page.image %}
+    <div class="post-cover-image">
+      <img src="{{ page.image }}" alt="Cover image for {{ page.title }}">
+    </div>
+  {% endif %}
+{% endif %}
+
+
+  <main>
+    {{ content }}
+  </main>
+
+  <br>
+
+  <div align="center">
+	  <div id="bluesky-comments"></div>
+  </div>
+ 
+
+  <footer>
+    &copy; {{ site.time | date: "%Y" }} Samuele Amato. All rights reserved.
+  </footer>
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18",
+    "react-dom": "https://esm.sh/react-dom@18"
+  }
+}
+</script>
+
+<script type="module">
+  import { BlueskyComments } from 'https://unpkg.com/bluesky-comments@0.8.0/dist/bluesky-comments.es.js';
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const uri = '{{ page.bluesky_post_uri }}'; // deve essere valorizzato nel front matter
+    const author = 'samueleamato.xyz'; // il tuo dominio o handle
+    if(uri) {
+      BlueskyComments.init('bluesky-comments', { uri, author });
+    } else {
+      console.warn('No Bluesky URI for this post');
+    }
+  });
+</script>
+
+
+
+</body>
+</html>
+
