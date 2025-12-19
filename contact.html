@@ -1,14 +1,11 @@
----
----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>contact</title>
+<title>Contact</title>
 <meta name="author" content="Samuele Amato">
-<meta name="description" content="Samuele Amato's blog posts.">
+<meta name="description" content="Samuele Amato's contact page.">
 <style>
 body {
     margin: 0;
@@ -38,41 +35,34 @@ a:hover {
 a:active {
     color: red;
 }
-ul.posts-list {
+ul {
     list-style: none;
     padding-left: 0;
 }
-ul.posts-list li {
+ul li {
     margin: 10px 0;
 }
-span.post-date {
-    color: gray;
-    margin-right: 10px;
+i {
+    font-style: italic;
 }
 </style>
 </head>
 <body>
 <div class="container">
-<font size="7"><i><b>CONTACT</b></i></font>
-<br><br>
-<p>
- <i> Feel free to reach out through any of these channels, though I’ll only respond to proposals that align with my schedule and interests.</i>
-<br><br>
-e-mail<br>
-<a href="mailto:samuele@samueleamato.xyz"><i>samuele@samueleamato.xyz</i></a><br><br>
-github<br>
-<a href="https://github.com/rdwei"><i>https://github.com/rdwei</i></a><br><br>
-linkedin<br>
-<a href="https://www.linkedin.com/in/samuele-amato-878bb3374"><i>https://www.linkedin.com/in/samuele-amato-878bb3374</i></a><br><br>
-bluesky<br>
-<a href="https://bsky.app/profile/rdwei.bsky.social"><i>https://bsky.app/profile/rdwei.bsky.social</i></a><br><br>
-discord<br>
-<a href="https://discord.com/invite/m4madyG7j"><i>https://discord.com/invite/m4madyG7j</i></a><br><br>
-gpg key<br>
-<a href="gpg.txt"><i>public key</i></a><br><br>
-</p>
-<br>
-<a href="{{ '/' | relative_url }}">← back to homepage</a>
+    <font size="7"><i><b>CONTACT</b></i></font>
+    <br><br>
+    <p><i>Feel free to reach out through any of these channels. I’ll respond to proposals that fit my schedule and interests.</i></p>
+    <br>
+    <ul>
+        <li><b>Email:</b> <a href="mailto:samuele@samueleamato.xyz"><i>samuele@samueleamato.xyz</i></a></li>
+        <li><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/samuele-amato-878bb3374"><i>linkedin.com/in/samuele-amato-878bb3374</i></a></li>
+        <li><b>GitHub:</b> <a href="https://github.com/rdwei"><i>github.com/rdwei</i></a></li>
+        <li><b>Bluesky:</b> <a href="https://bsky.app/profile/rdwei.bsky.social"><i>bsky.app/profile/rdwei.bsky.social</i></a></li>
+        <li><b>Discord:</b> <a href="https://discord.com/invite/m4madyG7j"><i>discord.com/invite/m4madyG7j</i></a></li>
+    </ul>
+    <p><i>Here is my PGP key if you know how to use it:</i> <a href="gpg.txt">public key</a></p>
+    <br>
+    <a href="{{ '/' | relative_url }}">← back to homepage</a>
 </div>
 </body>
 </html>
