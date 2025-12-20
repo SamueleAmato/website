@@ -3,7 +3,7 @@ class MinimalHNComments extends HTMLElement {
         super();
         this.shadow = this.attachShadow({ mode: 'open' });
         this.itemId = this.getAttribute('itemId');
-        this.maxVisible = 3; // numero di commenti visibili inizialmente
+        this.maxVisible = 3;
         
         this.shadow.innerHTML = `
             <style>
@@ -17,34 +17,12 @@ class MinimalHNComments extends HTMLElement {
                 .hn-header {
                     text-align: center;
                     margin-bottom: 20px;
-                }
-                .hn-title {
-                    font-size: 1.2em;
-                    font-weight: bold;
-                }
-                .hn-link {
-                    color: blue;
-                    text-decoration: underline;
-                    cursor: pointer;
-                    font-size: 0.9em;
-                }
-                .hn-link:hover {
-                    color: blue;
-                }
-                .load-btn {
-                    background: white;
-                    border: 1px solid #000;
-                    padding: 10px 20px;
-                    cursor: pointer;
-                    font-family: inherit;
-                    font-size: 1em;
-                }
-                .load-btn:hover {
-                    background: #f0f0f0;
+                    font-size: 1.1em;
                 }
                 .loading {
                     text-align: center;
                     color: #666;
+                    margin: 20px 0;
                 }
                 .comment {
                     margin: 20px 0;
@@ -68,14 +46,10 @@ class MinimalHNComments extends HTMLElement {
                     color: blue;
                     text-decoration: underline;
                 }
-                .reply {
-                    margin-left: 30px;
-                    margin-top: 10px;
-                    border-left-color: #bbb;
-                }
                 .fade-overlay {
                     position: relative;
                     overflow: hidden;
+                    max-height: 600px;
                 }
                 .fade-overlay::after {
                     content: '';
@@ -87,82 +61,81 @@ class MinimalHNComments extends HTMLElement {
                     background: linear-gradient(transparent, white);
                     pointer-events: none;
                 }
-                .expand-btn {
+                .hn-link {
                     text-align: center;
-                    margin: 20px 0;
+                    margin: 30px 0;
                 }
-                .expand-btn button {
-                    background: white;
-                    border: 1px solid #000;
-                    padding: 10px 30px;
-                    cursor: pointer;
-                    font-family: inherit;
-                    font-size: 1em;
+                .hn-link a {
+                    color: blue;
+                    text-decoration: underline;
+                    font-size: 0.95em;
                 }
-                .expand-btn button:hover {
-                    background: #f0f0f0;
+                .hn-link a:visited {
+                    color: purple;
+                }
+                .hn-link a:hover {
+                    color: blue;
+                }
+                .hn-link a:active {
+                    color: red;
                 }
                 .hidden {
                     display: none;
                 }
-                .no-comments {
-                    text-align: center;
-                    color: #666;
-                    margin: 20px 0;
-                }
             </style>
             
             <div class="hn-container">
+                <div class="loading" id="loading">loading comments...</div>
                 
-                <div class="load-section">
-                    <button class="load-btn" id="load-btn">load comments</button>
-                </div>
-                
-                <div class="loading hidden" id="loading">loading...</div>
-                <div class="no-comments hidden" id="no-comments">no comments yet</div>
-                
-                <div id="comments-container"></div>
-                
-                <div class="expand-btn hidden" id="expand-section">
-                    <button id="expand-btn">show all comments</button>
+                <div class="hidden" id="comments-section">
+                    <div class="hn-header">comments</div>
+                    <div id="comments-container"></div>
+                    <div class="hn-link" id="hn-link">
+                        <a href="https://news.ycombinator.com/item?id=${this.itemId}" target="_blank">
+                            see full discussion on hacker news ↗
+                        </a>
+                    </div>
                 </div>
             </div>
         `;
         
-        this.loadBtn = this.shadow.getElementById('load-btn');
-        this.loadSection = this.shadow.querySelector('.load-section');
         this.loading = this.shadow.getElementById('loading');
-        this.noComments = this.shadow.getElementById('no-comments');
+        this.commentsSection = this.shadow.getElementById('comments-section');
         this.container = this.shadow.getElementById('comments-container');
-        this.expandSection = this.shadow.getElementById('expand-section');
-        this.expandBtn = this.shadow.getElementById('expand-btn');
-        
-        this.loadBtn.addEventListener('click', () => this.loadComments());
-        this.expandBtn.addEventListener('click', () => this.expandComments());
+        this.hnLink = this.shadow.getElementById('hn-link');
+    }
+    
+    connectedCallback() {
+        this.loadComments();
     }
     
     async loadComments() {
-        this.loadSection.classList.add('hidden');
-        this.loading.classList.remove('hidden');
-        
         try {
             const response = await fetch(`https://hacker-news.firebaseio.com/v0/item/${this.itemId}.json`);
             const data = await response.json();
             
             if (!data.kids || data.kids.length === 0) {
-                this.loading.classList.add('hidden');
-                this.noComments.classList.remove('hidden');
+                // Nascondi tutto se non ci sono commenti
+                this.shadow.querySelector('.hn-container').innerHTML = '';
                 return;
             }
             
             this.allComments = [];
             await this.fetchComments(data.kids);
             
+            if (this.allComments.length === 0) {
+                // Nascondi tutto se non ci sono commenti validi
+                this.shadow.querySelector('.hn-container').innerHTML = '';
+                return;
+            }
+            
             this.loading.classList.add('hidden');
+            this.commentsSection.classList.remove('hidden');
             this.renderComments();
         } catch (error) {
             console.error('Error loading comments:', error);
-            this.loading.textContent = 'error loading comments';
+            // Nascondi tutto in caso di errore
+            this.shadow.querySelector('.hn-container').innerHTML = '';
         }
     }
     
@@ -175,7 +148,7 @@ class MinimalHNComments extends HTMLElement {
                 if (comment && !comment.deleted && comment.text) {
                     this.allComments.push(comment);
                     
-                    if (comment.kids) {
+                    if (comment.kids && this.allComments.length < 10) {
                         await this.fetchComments(comment.kids);
                     }
                 }
@@ -185,17 +158,13 @@ class MinimalHNComments extends HTMLElement {
         }
     }
     
-    renderComments(showAll = false) {
+    renderComments() {
         this.container.innerHTML = '';
         
-        const commentsToShow = showAll ? this.allComments : this.allComments.slice(0, this.maxVisible);
+        const commentsToShow = this.allComments.slice(0, this.maxVisible);
         
-        if (!showAll && this.allComments.length > this.maxVisible) {
+        if (this.allComments.length > this.maxVisible) {
             this.container.classList.add('fade-overlay');
-            this.expandSection.classList.remove('hidden');
-        } else {
-            this.container.classList.remove('fade-overlay');
-            this.expandSection.classList.add('hidden');
         }
         
         commentsToShow.forEach(comment => {
@@ -221,10 +190,6 @@ class MinimalHNComments extends HTMLElement {
         `;
         
         return div;
-    }
-    
-    expandComments() {
-        this.renderComments(true);
     }
 }
 
