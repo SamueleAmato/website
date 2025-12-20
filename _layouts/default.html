@@ -13,7 +13,6 @@ layout: null
 <meta property="og:image" content="{{ page.image }}" />
 {% endif %}
 <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon" />
-<link rel="stylesheet" href="https://unpkg.com/bluesky-comments@0.8.0/dist/bluesky-comments.css">
 <style>
 body {
     margin: 0;
@@ -113,6 +112,10 @@ body {
     margin: 40px 0;
     text-align: center;
 }
+#bluesky-comments {
+    margin: 40px 0;
+    text-align: center;
+}
 .footer {
     text-align: center;
     margin-top: 40px;
@@ -152,33 +155,10 @@ body {
         <a href="{{ '/feed.xml' | relative_url }}">rss</a>
     </div>
 
-    <div id="bluesky-comments"></div>
-
     <div class="footer">
         &copy; {{ site.time | date: "%Y" }} Samuele Amato
     </div>
 </div>
-
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@18",
-    "react-dom": "https://esm.sh/react-dom@18"
-  }
-}
-</script>
-
-<script type="module">
-  import { BlueskyComments } from 'https://unpkg.com/bluesky-comments@0.8.0/dist/bluesky-comments.es.js';
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const uri = '{{ page.bluesky_post_uri }}';
-    const author = 'samueleamato.xyz';
-    if(uri) {
-      BlueskyComments.init('bluesky-comments', { uri, author });
-    }
-  });
-</script>
 
 </body>
 </html>
