@@ -113,12 +113,6 @@ class MinimalHNComments extends HTMLElement {
             </style>
             
             <div class="hn-container">
-                <div class="hn-header">
-                    <div class="hn-title">comments</div>
-                    <a class="hn-link" href="https://news.ycombinator.com/item?id=${this.itemId}" target="_blank">
-                        view on hacker news ↗
-                    </a>
-                </div>
                 
                 <div class="load-section">
                     <button class="load-btn" id="load-btn">load comments</button>

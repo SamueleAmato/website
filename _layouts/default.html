@@ -155,10 +155,12 @@ body {
         <a href="{{ '/feed.xml' | relative_url }}">rss</a>
     </div>
 
+    <div align="center">
     <!-- Hacker News Comments -->
     {% if page.hn_id %}
     <hn-comments itemId="{{ page.hn_id }}"></hn-comments>
     {% endif %}
+    </div>
 
     <div class="footer">
         &copy; {{ site.time | date: "%Y" }} Samuele Amato
