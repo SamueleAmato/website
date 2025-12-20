@@ -155,10 +155,16 @@ body {
         <a href="{{ '/feed.xml' | relative_url }}">rss</a>
     </div>
 
+    <!-- Hacker News Comments -->
+    {% if page.hn_id %}
+    <hn-comments itemId="{{ page.hn_id }}"></hn-comments>
+    {% endif %}
+
     <div class="footer">
         &copy; {{ site.time | date: "%Y" }} Samuele Amato
     </div>
 </div>
 
+<script src="{{ '/script.js' | relative_url }}"></script>
 </body>
 </html>
