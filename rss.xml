@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://samueleamato.xyz/feed.xml" rel="self" type="application/atom+xml"/><link href="https://samueleamato.xyz/" rel="alternate" type="text/html"/><updated>2025-12-19T22:25:34+00:00</updated><id>https://samueleamato.xyz/feed.xml</id><title type="html">Samuele Amato</title><subtitle>Low-level dev building tools in C, Rust, and more.</subtitle><author><name>Samuele Amato</name><email>samuele@samueleamato.xyz</email></author><entry><title type="html">Hardware I Use</title><link href="https://samueleamato.xyz/2025/07/30/hardware-i-use" rel="alternate" type="text/html" title="Hardware I Use"/><published>2025-07-30T00:00:00+00:00</published><updated>2025-07-30T00:00:00+00:00</updated><id>https://samueleamato.xyz/2025/07/30/hardware-i-use</id><content type="html" xml:base="https://samueleamato.xyz/2025/07/30/hardware-i-use"><![CDATA[<p><em>No affiliate links — just stuff I use.</em></p>
+
+<h2 id="desk-gear">Desk Gear</h2>
+
+<ul>
+  <li><strong>Mouse</strong> — <a href="https://it.aliexpress.com/item/1005007556974236.html">Seenda Trackball</a></li>
+  <li><strong>Keyboard</strong> — <a href="https://tex.com.tw/products/shura-diy-type">Shura (DIY)</a></li>
+  <li><strong>Monitors</strong> — 2× <a href="https://www.amazon.com/KOORUI-FreeSyncTM-Compatible-Ultra-Thin-24E4/dp/B09TTDRXNS?th=1">KOORUI 24” 1920×1080</a></li>
+  <li><strong>Monitor Arm</strong> — <a href="https://www.amazon.com/VIVO-Monitor-Adjustable-Screens-STAND-V002/dp/B009S750LA?dib=eyJ2IjoiMSJ9.52rzfU0jr0ATjhu5aeeFX5kFpW0OOVRwGyyQmW84zkOsp4piJWNjs51Q4aw-syY5Sw2qNk5kCkuieYBY4_tb9zziqj0-gvGMFbyQ6hWMjY5HM_sjufUFjAP2BGJnkN7aQaOXj-7HtiaToOLLD9gTika-_eiwz7Re8-WQq5ImcmSctogFlkSmMXJbSVuOAwgB8gp-ZYCxpyoOUQQl1-evv5vVReoO7-igFaZZcWLy9-w.2vdF9XlL_DVjTag0mnrZJVmXAV5sE1ccl35kTSyXuGM&amp;dib_tag=se&amp;keywords=monitor%2Bstand&amp;qid=1753906636&amp;sr=8-8&amp;th=1">VIVO Dual Monitor Desk Mount</a></li>
+  <li><strong>Earphones</strong> — <a href="https://www.amazon.it/dp/B07QKYTGH9?th=1&amp;keywords=kz%2Bearphones&amp;linkCode=gs2&amp;tag=sixtytrend02-21">Linsoul KZ ZS10</a></li>
+  <li><strong>E-Ink Tablet</strong> — <a href="https://remarkable.com/products/remarkable-2">reMarkable 2</a></li>
+  <li><strong>Book Stand</strong> — <a href="https://www.amazon.com/Readaeer-Cookbook-Kitchen-Foldable-Adjustable/dp/B06XQMVGMJ?crid=GTYZIK7E2MEU&amp;dib=eyJ2IjoiMSJ9.UZgyIfZ81lZCsi3qmUf4sxtYGBW8aI87AAUaD6eQCndCK_xj5Sy8_n_Uq1_R_2_IlqBGHKYYa7Lp_J-mFGwvwOK7RAwfKMELrMqY565-j8r5G9XwhJiezj73oHlHLsTbI5-V0Cn9PS-NVRwonwUH8fjBK6E4RTe_QnFJ9MPCoRKQnitjHbCJ_rsEA2Y6bT8mvPK23fP2SehnIyMio4qkXRpN7Owuc9CPCOjOiVaEn9KTzALAuSlw3esWHU9QoRklEQRYY0CVLZPEj3trSQ3tRpX2coMlxgiMCBPBtCwDB4Q.Q6mKgORsbLUl-m97Y3LHLwAi1SsXWjz85cSiAGoXEFA&amp;dib_tag=se&amp;keywords=leggio&amp;qid=1753906667&amp;sprefix=leggi%2Caps%2C233&amp;sr=8-9">Readaeer Bamboo Book Stand</a></li>
+</ul>
+
+<h2 id="computers">Computers</h2>
+
+<ul>
+  <li>
+    <p><strong>desktop</strong><br />
+NVIDIA GTX 1660 Super<br />
+16GB RAM<br />
+256GB NVMe SSD<br />
+OS: Arch Linux</p>
+  </li>
+  <li>
+    <p><strong>laptop 1</strong> — Lenovo Ideapad Chromebook 15<br />
+OS: Alpine Linux (fully open source stack, including BIOS)</p>
+  </li>
+  <li>
+    <p><strong>laptop 2</strong> — Samsung Galaxy Chromebook<br />
+OS: Arch Linux</p>
+  </li>
+  <li>
+    <p><strong>laptop 3</strong> — ThinkPad X220<br />
+OS: Arch Linux</p>
+  </li>
+</ul>]]></content><author><name>Samuele Amato</name><email>samuele@samueleamato.xyz</email></author><summary type="html"><![CDATA[No affiliate links — just stuff I use.]]></summary></entry><entry><title type="html">The Future of Authenticity</title><link href="https://samueleamato.xyz/2025/07/30/the-future-of-authenticity" rel="alternate" type="text/html" title="The Future of Authenticity"/><published>2025-07-30T00:00:00+00:00</published><updated>2025-07-30T00:00:00+00:00</updated><id>https://samueleamato.xyz/2025/07/30/the-future-of-authenticity</id><content type="html" xml:base="https://samueleamato.xyz/2025/07/30/the-future-of-authenticity"><![CDATA[<p>A few days ago, I had been listening to a lofi playlist, one of those endless background mixes people use to study. In a few minutes, something felt off. Briefly, the track lost its point, the rhythm and the melody wandered in a way that felt forced, as though it was trying to follow a pattern but couldn’t commit to one.</p>
+
+<p>And that was when it hit me: this likely was <em>AI-composed</em>. I wasn’t sure at first, but reading the comments put my mind at ease, some of the other listeners had noticed the same thing.</p>
+
+<p>Objectively, there was ““nothing wrong”” with the sound. But having discovered that <em>no one had actually composed it</em> made all the difference to my experience. The music wasn’t “wrong”, but it felt hollow, like the function of it was missing.</p>
+
+<h2 id="why-knowing-the-creator-still-matters">Why Knowing the Creator Still Matters</h2>
+<p>I do not believe that it’s important to associate a piece of art with its artist. Personally, i dont do: an artist may be obnoxious, morally dubious, or simply a “piece of shit,” yet if I like his work I am able to appreciate it completely. The art itself is sufficient.</p>
+
+<p>What does matter is that we know that a <strong>human being</strong>, someone capable of thought, intention and feeling, made it. Knowing that gives it a level of meaning, even if we don’t particularly care about the individual who created it. There is a small but real distinction between consuming something that emerged from a conscious, emotional process and something produced by an algorithm.</p>
+
+<p>We attribute value not only to perfection, but to effort and intent. A sketch drawn by hand, a tune crafted over a series of weeks, or a brief film made with attention all carry traces of human decision-making, testing, and emotional investment. Having this knowledge inspires us to connect more deeply with the work and to appreciate it.</p>
+
+<p>Some might say: “If you don’t know it’s AI, you can still enjoy it.”
+That’s easy to say <strong>now</strong>, when we automatically assume every song we hear was made by a human. But in a not-so-distant future, when AI-generated content becomes everyday consumption, the doubt “am I listening to a real artist or not?” will come up much more often.</p>
+
+<h2 id="ai-saturation">AI Saturation</h2>
+
+<p>Even when AI succeeds at being as accurate as humans, or even more accurate, there’s a common pattern: AI-generated content is too perfect. No real “mistakes,” no small deviations, impefection or unexpected choices, and that makes sense, because it’s algorithms that are doing the job. AI can replicate styles, approaches, and even emotional signals, but those imperfections that mark human work simply get lost.</p>
+
+<p>It’s similar to how actors or models used to have unique features, flaws that gave them character and individuality. Today, with beauty standards homogenized, faces and performances are polished to near uniformity. AI takes this phenomenon to the extreme.</p>
+
+<p>One may argue that AI can mimic human mistakes, and to a certain extent, it is possible. AI, however, cannot make genuinely new human mistakes — it cannot get tired, doubt, or intuit. It can only mix and match within the algorithms it has learned. That is, algorithmic perfection can imitate human failings, but never their origin.</p>
+
+<p>Some may argue that AI can imitate human mistakes, that’s true. But precisely because it can only <em>imitate</em>, it can never create new ones. Many artistic breakthroughs were born out of human error: the distorted guitar tone that defined rock music was the result of a <a href="https://en.wikipedia.org/wiki/Rocket_88">damaged amplifier</a>, the jump cut in film editing emerged from an <a href="https://en.wikipedia.org/wiki/Jump_cut">editing mistake</a> that turned into a stylistic revolution; entire art movements, from abstract expressionism to glitch aesthetics, were sparked by accidents, limitations, or missteps.</p>
+
+<h2 id="the-human-created-label">The “Human-Created” Label</h2>
+
+<p>After all this, it’s not hard to imagine a future where new labels, and perhaps even dedicated institutions, emerge to certify the human authenticity of creative works.</p>
+
+<p>A “Human-Made Certified” badge could become the new mark of integrity, signaling that no AI was involved in the creative process. It would allow any person to immediately know if what they’re watching, reading, or listening to was born from a human mind or an algorithmic system.</p>]]></content><author><name>Samuele Amato</name><email>samuele@samueleamato.xyz</email></author><summary type="html"><![CDATA[A few days ago, I had been listening to a lofi playlist, one of those endless background mixes people use to study. In a few minutes, something felt off. Briefly, the track lost its point, the rhythm and the melody wandered in a way that felt forced, as though it was trying to follow a pattern but couldn’t commit to one.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://samueleamato.xyz/assets/images/human-made.jpg"/><media:content medium="image" url="https://samueleamato.xyz/assets/images/human-made.jpg" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry><title type="html">Hardware I Use</title><link href="https://samueleamato.xyz/2025/07/30/hardware-i-use" rel="alternate" type="text/html" title="Hardware I Use"/><published>2025-07-30T00:00:00+00:00</published><updated>2025-07-30T00:00:00+00:00</updated><id>https://samueleamato.xyz/2025/07/30/hardware-i-use</id><content type="html" xml:base="https://samueleamato.xyz/2025/07/30/hardware-i-use"><![CDATA[<p><em>No affiliate links — just stuff I use.</em></p>
+
+<h2 id="desk-gear">Desk Gear</h2>
+
+<ul>
+  <li><strong>Mouse</strong> — <a href="https://it.aliexpress.com/item/1005007556974236.html">Seenda Trackball</a></li>
+  <li><strong>Keyboard</strong> — <a href="https://tex.com.tw/products/shura-diy-type">Shura (DIY)</a></li>
+  <li><strong>Monitors</strong> — 2× <a href="https://www.amazon.com/KOORUI-FreeSyncTM-Compatible-Ultra-Thin-24E4/dp/B09TTDRXNS?th=1">KOORUI 24” 1920×1080</a></li>
+  <li><strong>Monitor Arm</strong> — <a href="https://www.amazon.com/VIVO-Monitor-Adjustable-Screens-STAND-V002/dp/B009S750LA?dib=eyJ2IjoiMSJ9.52rzfU0jr0ATjhu5aeeFX5kFpW0OOVRwGyyQmW84zkOsp4piJWNjs51Q4aw-syY5Sw2qNk5kCkuieYBY4_tb9zziqj0-gvGMFbyQ6hWMjY5HM_sjufUFjAP2BGJnkN7aQaOXj-7HtiaToOLLD9gTika-_eiwz7Re8-WQq5ImcmSctogFlkSmMXJbSVuOAwgB8gp-ZYCxpyoOUQQl1-evv5vVReoO7-igFaZZcWLy9-w.2vdF9XlL_DVjTag0mnrZJVmXAV5sE1ccl35kTSyXuGM&amp;dib_tag=se&amp;keywords=monitor%2Bstand&amp;qid=1753906636&amp;sr=8-8&amp;th=1">VIVO Dual Monitor Desk Mount</a></li>
+  <li><strong>Earphones</strong> — <a href="https://www.amazon.it/dp/B07QKYTGH9?th=1&amp;keywords=kz%2Bearphones&amp;linkCode=gs2&amp;tag=sixtytrend02-21">Linsoul KZ ZS10</a></li>
+  <li><strong>E-Ink Tablet</strong> — <a href="https://remarkable.com/products/remarkable-2">reMarkable 2</a></li>
+  <li><strong>Book Stand</strong> — <a href="https://www.amazon.com/Readaeer-Cookbook-Kitchen-Foldable-Adjustable/dp/B06XQMVGMJ?crid=GTYZIK7E2MEU&amp;dib=eyJ2IjoiMSJ9.UZgyIfZ81lZCsi3qmUf4sxtYGBW8aI87AAUaD6eQCndCK_xj5Sy8_n_Uq1_R_2_IlqBGHKYYa7Lp_J-mFGwvwOK7RAwfKMELrMqY565-j8r5G9XwhJiezj73oHlHLsTbI5-V0Cn9PS-NVRwonwUH8fjBK6E4RTe_QnFJ9MPCoRKQnitjHbCJ_rsEA2Y6bT8mvPK23fP2SehnIyMio4qkXRpN7Owuc9CPCOjOiVaEn9KTzALAuSlw3esWHU9QoRklEQRYY0CVLZPEj3trSQ3tRpX2coMlxgiMCBPBtCwDB4Q.Q6mKgORsbLUl-m97Y3LHLwAi1SsXWjz85cSiAGoXEFA&amp;dib_tag=se&amp;keywords=leggio&amp;qid=1753906667&amp;sprefix=leggi%2Caps%2C233&amp;sr=8-9">Readaeer Bamboo Book Stand</a></li>
+</ul>
+
+<h2 id="computers">Computers</h2>
+
+<ul>
+  <li>
+    <p><strong>desktop</strong><br />
+NVIDIA GTX 1660 Super<br />
+16GB RAM<br />
+256GB NVMe SSD<br />
+OS: Arch Linux</p>
+  </li>
+  <li>
+    <p><strong>laptop 1</strong> — Lenovo Ideapad Chromebook 15<br />
+OS: Alpine Linux (fully open source stack, including BIOS)</p>
+  </li>
+  <li>
+    <p><strong>laptop 2</strong> — Samsung Galaxy Chromebook<br />
+OS: Arch Linux</p>
+  </li>
+  <li>
+    <p><strong>laptop 3</strong> — ThinkPad X220<br />
+OS: Arch Linux</p>
+  </li>
+</ul>]]></content><author><name>Samuele Amato</name><email>samuele@samueleamato.xyz</email></author><category term="new_website"/><summary type="html"><![CDATA[No affiliate links — just stuff I use.]]></summary></entry><entry><title type="html">The Future of Authenticity</title><link href="https://samueleamato.xyz/2025/07/30/the-future-of-authenticity" rel="alternate" type="text/html" title="The Future of Authenticity"/><published>2025-07-30T00:00:00+00:00</published><updated>2025-07-30T00:00:00+00:00</updated><id>https://samueleamato.xyz/2025/07/30/the-future-of-authenticity</id><content type="html" xml:base="https://samueleamato.xyz/2025/07/30/the-future-of-authenticity"><![CDATA[<p>A few days ago, I had been listening to a lofi playlist, one of those endless background mixes people use to study. In a few minutes, something felt off. Briefly, the track lost its point, the rhythm and the melody wandered in a way that felt forced, as though it was trying to follow a pattern but couldn’t commit to one.</p>
+
+<p>And that was when it hit me: this likely was <em>AI-composed</em>. I wasn’t sure at first, but reading the comments put my mind at ease, some of the other listeners had noticed the same thing.</p>
+
+<p>Objectively, there was ““nothing wrong”” with the sound. But having discovered that <em>no one had actually composed it</em> made all the difference to my experience. The music wasn’t “wrong”, but it felt hollow, like the function of it was missing.</p>
+
+<h2 id="why-knowing-the-creator-still-matters">Why Knowing the Creator Still Matters</h2>
+<p>I do not believe that it’s important to associate a piece of art with its artist. Personally, i dont do: an artist may be obnoxious, morally dubious, or simply a “piece of shit,” yet if I like his work I am able to appreciate it completely. The art itself is sufficient.</p>
+
+<p>What does matter is that we know that a <strong>human being</strong>, someone capable of thought, intention and feeling, made it. Knowing that gives it a level of meaning, even if we don’t particularly care about the individual who created it. There is a small but real distinction between consuming something that emerged from a conscious, emotional process and something produced by an algorithm.</p>
+
+<p>We attribute value not only to perfection, but to effort and intent. A sketch drawn by hand, a tune crafted over a series of weeks, or a brief film made with attention all carry traces of human decision-making, testing, and emotional investment. Having this knowledge inspires us to connect more deeply with the work and to appreciate it.</p>
+
+<p>Some might say: “If you don’t know it’s AI, you can still enjoy it.”
+That’s easy to say <strong>now</strong>, when we automatically assume every song we hear was made by a human. But in a not-so-distant future, when AI-generated content becomes everyday consumption, the doubt “am I listening to a real artist or not?” will come up much more often.</p>
+
+<h2 id="ai-saturation">AI Saturation</h2>
+
+<p>Even when AI succeeds at being as accurate as humans, or even more accurate, there’s a common pattern: AI-generated content is too perfect. No real “mistakes,” no small deviations, impefection or unexpected choices, and that makes sense, because it’s algorithms that are doing the job. AI can replicate styles, approaches, and even emotional signals, but those imperfections that mark human work simply get lost.</p>
+
+<p>It’s similar to how actors or models used to have unique features, flaws that gave them character and individuality. Today, with beauty standards homogenized, faces and performances are polished to near uniformity. AI takes this phenomenon to the extreme.</p>
+
+<p>One may argue that AI can mimic human mistakes, and to a certain extent, it is possible. AI, however, cannot make genuinely new human mistakes — it cannot get tired, doubt, or intuit. It can only mix and match within the algorithms it has learned. That is, algorithmic perfection can imitate human failings, but never their origin.</p>
+
+<p>Some may argue that AI can imitate human mistakes, that’s true. But precisely because it can only <em>imitate</em>, it can never create new ones. Many artistic breakthroughs were born out of human error: the distorted guitar tone that defined rock music was the result of a <a href="https://en.wikipedia.org/wiki/Rocket_88">damaged amplifier</a>, the jump cut in film editing emerged from an <a href="https://en.wikipedia.org/wiki/Jump_cut">editing mistake</a> that turned into a stylistic revolution; entire art movements, from abstract expressionism to glitch aesthetics, were sparked by accidents, limitations, or missteps.</p>
+
+<h2 id="the-human-created-label">The “Human-Created” Label</h2>
+
+<p>After all this, it’s not hard to imagine a future where new labels, and perhaps even dedicated institutions, emerge to certify the human authenticity of creative works.</p>
+
+<p>A “Human-Made Certified” badge could become the new mark of integrity, signaling that no AI was involved in the creative process. It would allow any person to immediately know if what they’re watching, reading, or listening to was born from a human mind or an algorithmic system.</p>]]></content><author><name>Samuele Amato</name><email>samuele@samueleamato.xyz</email></author><category term="new_website"/><summary type="html"><![CDATA[A few days ago, I had been listening to a lofi playlist, one of those endless background mixes people use to study. In a few minutes, something felt off. Briefly, the track lost its point, the rhythm and the melody wandered in a way that felt forced, as though it was trying to follow a pattern but couldn’t commit to one.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://samueleamato.xyz/assets/images/human-made.jpg"/><media:content medium="image" url="https://samueleamato.xyz/assets/images/human-made.jpg" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry><title type="html">Why I Use a Dumbphone in 2025 (and Why You Should Too)</title><link href="https://samueleamato.xyz/2025/06/04/why-i-use-a-dumbphone" rel="alternate" type="text/html" title="Why I Use a Dumbphone in 2025 (and Why You Should Too)"/><published>2025-06-04T00:00:00+00:00</published><updated>2025-06-04T00:00:00+00:00</updated><id>https://samueleamato.xyz/2025/06/04/why-i-use-a-dumbphone</id><content type="html" xml:base="https://samueleamato.xyz/2025/06/04/why-i-use-a-dumbphone"><![CDATA[<p>Imagine living in 2025 without notifications, without constant updates. While everyone carries a phone in their pocket with a thousand reasons to get distracted, I use a phone without apps, without social media, without distractions. Many would say I’m limited, but I say I’m free.</p>
+
+<h2 id="why">Why?</h2>
+
+<p>When talking about reasons why someone should switch to a dumbphone, I believe we need to separate two types of benefits: technical and mental. The technical benefits relate to the device’s productivity and efficiency, while the human benefits are connected to us as humans-beings who can easily get distracted and lose hours watching content we don’t even care about.</p>
+
+<h2 id="mental-benefits">Mental Benefits</h2>
+<p>Mental benefits improve the quality of our attention, reduce cognitive overload, and allow us to be more present throughout the day. Here are some of the most important mental benefits of using a dumbphone:</p>
+
+<h3 id="addiction-is-real">Addiction is real</h3>
+<p>With the rise of short-form content (TikTok, Instagram Shorts, YouTube Reels), it has become incredibly easy to damage our attention span. Addiction to this type of content is real, it’s not just some outdated “boomer” opinion. It’s here, affecting many of us, and data proves it! A Microsoft study showed that the average attention span dropped from 12 seconds in the 2000s to 8 seconds in 2013. Today, in 2025, the estimated average attention span is 7 seconds, even <a href="https://time.com/3858309/attention-spans-goldfish/">less than that of a goldfish</a>, which is estimated at 9 seconds.</p>
+
+<div align="center">
+    <img src="/assets/images/soglia_attenzione.jpg" width="600px" />
+</div>
+
+<p>As the chart shows, attention spans are plummeting. Today’s social media is like a drug, with the only difference being that it’s “"”free”””.</p>
+
+<h3 id="productivity">Productivity</h3>
+<p>One of the most surprising effects of switching to a dumbphone has been its direct impact on my productivity. Without notifications, constant messages, or the temptation to “just check something real quick,” I rediscovered how much real time there is in a day.</p>
+
+<p>Work sessions became deeper and less fragmented, and (linking back to the first point) my ability to concentrate improved dramatically. Plus, my mind feels less tired because it’s not constantly interrupted. With a smartphone, just one notification can cost you 15 minutes lost on Reddit.</p>
+
+<p>Studies like <a href="https://www.researchgate.net/publication/315966604_Brain_Drain_The_Mere_Presence_of_One's_Own_Smartphone_Reduces_Available_Cognitive_Capacity">this one</a> have shown that merely having your smartphone in sight reduces your cognitive capacity.</p>
+
+<h3 id="real-and-healthy-relationships">Real (and Healthy) Relationships</h3>
+
+<p>Do I really need to explain this? When you don’t have a smartphone within reach, you actually start listening to the person in front of you. You’re truly present. You don’t check messages while talking, don’t scroll while walking or taking a break ,you begin to appreciate the world as it is, noticing small details you previously overlooked.</p>
+
+<h2 id="technical-benefits">Technical Benefits</h2>
+
+<p>Technical benefits refer to the practical and functional features of the dumbphone. Paradoxically, going back actually offers more advantages than moving forward.</p>
+
+<h3 id="battery-lasts-3-days-not-3-hours">Battery Lasts 3 Days (Not 3 Hours)</h3>
+
+<p>Although it may sound trivial, it’s worth emphasizing: the battery life of a dumbphone is LEGENDARY. You literally only need to charge it once every three days at most, and charging takes very little time. Plus, removable batteries are super convenient if you want to be sure you never run out of power.</p>
+
+<h3 id="privacy">Privacy</h3>
+
+<p>For me, this could fit under mental benefits, but it’s more appropriate here. It’s no secret that most apps these days (all for some people) collect data to exploit or sell it. Personally, I’m very pragmatic about privacy ,there’s no freedom without privacy, and there’s no real freedom with a smartphone.</p>
+
+<p>Nowadays, it’s incredibly hard to have a smartphone that truly keeps your activities private, especially with Google’s digital signature system making rooted devices unusable. In this context, a dumbphone is perfect ,it has no GPS, no Wi-Fi, nothing that tracks you.</p>
+
+<h3 id="minimal-and-functional-design">Minimal and Functional Design</h3>
+
+<p>All dumbphones have small screens and simple buttons. From a software perspective, there’s not much to say. This is actually a delicate topic, as the definition of dumbphone is still debated. Some say a phone with WhatsApp but all other dumbphone features counts, others disagree. Personally, I believe even a simple messaging app like WhatsApp ruins the true experience a dumbphone offers. When using a dumbphone, everything is simpler, more straightforward. If you need to reach someone, you call them directly instead of writing a message and waiting for a reply ,and they do the same with you.</p>
+
+<h2 id="its-not-all-or-nothing">It’s Not All or Nothing</h2>
+
+<p>Switching from a smartphone to a dumbphone <strong>doesn’t mean</strong> abandoning WhatsApp, Reddit, or YouTube altogether. It means using them less frequently. You can still access these platforms on your PC, which naturally reduces how often you check them and limits usage to only what’s necessary, exactly what we’re trying to achieve!</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>There are many other benefits I didn’t go into, like improved sleep quality (blue light is harmful), durability and sturdiness, ease of repair, and so on. I hope this list of reasons to buy an old used phone and ditch your smartphone inspires you to try it. I want to stress that switching to a dumbphone isn’t for everyone, but it could be for you!</p>]]></content><author><name>Samuele Amato</name><email>samuele@samueleamato.xyz</email></author><summary type="html"><![CDATA[Imagine living in 2025 without notifications, without constant updates. While everyone carries a phone in their pocket with a thousand reasons to get distracted, I use a phone without apps, without social media, without distractions. Many would say I’m limited, but I say I’m free.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.weareteachers.com/wp-content/uploads/Can-Dumb-Phones-Solve-Educations-Student-Engagement-Issues.png"/><media:content medium="image" url="https://www.weareteachers.com/wp-content/uploads/Can-Dumb-Phones-Solve-Educations-Student-Engagement-Issues.png" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry><title type="html">Why I Use a Dumbphone in 2025 (and Why You Should Too)</title><link href="https://samueleamato.xyz/2025/06/04/why-i-use-a-dumbphone" rel="alternate" type="text/html" title="Why I Use a Dumbphone in 2025 (and Why You Should Too)"/><published>2025-06-04T00:00:00+00:00</published><updated>2025-06-04T00:00:00+00:00</updated><id>https://samueleamato.xyz/2025/06/04/why-i-use-a-dumbphone</id><content type="html" xml:base="https://samueleamato.xyz/2025/06/04/why-i-use-a-dumbphone"><![CDATA[<p>Imagine living in 2025 without notifications, without constant updates. While everyone carries a phone in their pocket with a thousand reasons to get distracted, I use a phone without apps, without social media, without distractions. Many would say I’m limited, but I say I’m free.</p>
+
+<h2 id="why">Why?</h2>
+
+<p>When talking about reasons why someone should switch to a dumbphone, I believe we need to separate two types of benefits: technical and mental. The technical benefits relate to the device’s productivity and efficiency, while the human benefits are connected to us as humans-beings who can easily get distracted and lose hours watching content we don’t even care about.</p>
+
+<h2 id="mental-benefits">Mental Benefits</h2>
+<p>Mental benefits improve the quality of our attention, reduce cognitive overload, and allow us to be more present throughout the day. Here are some of the most important mental benefits of using a dumbphone:</p>
+
+<h3 id="addiction-is-real">Addiction is real</h3>
+<p>With the rise of short-form content (TikTok, Instagram Shorts, YouTube Reels), it has become incredibly easy to damage our attention span. Addiction to this type of content is real, it’s not just some outdated “boomer” opinion. It’s here, affecting many of us, and data proves it! A Microsoft study showed that the average attention span dropped from 12 seconds in the 2000s to 8 seconds in 2013. Today, in 2025, the estimated average attention span is 7 seconds, even <a href="https://time.com/3858309/attention-spans-goldfish/">less than that of a goldfish</a>, which is estimated at 9 seconds.</p>
+
+<div align="center">
+    <img src="/assets/images/soglia_attenzione.jpg" width="600px" />
+</div>
+
+<p>As the chart shows, attention spans are plummeting. Today’s social media is like a drug, with the only difference being that it’s “"”free”””.</p>
+
+<h3 id="productivity">Productivity</h3>
+<p>One of the most surprising effects of switching to a dumbphone has been its direct impact on my productivity. Without notifications, constant messages, or the temptation to “just check something real quick,” I rediscovered how much real time there is in a day.</p>
+
+<p>Work sessions became deeper and less fragmented, and (linking back to the first point) my ability to concentrate improved dramatically. Plus, my mind feels less tired because it’s not constantly interrupted. With a smartphone, just one notification can cost you 15 minutes lost on Reddit.</p>
+
+<p>Studies like <a href="https://www.researchgate.net/publication/315966604_Brain_Drain_The_Mere_Presence_of_One's_Own_Smartphone_Reduces_Available_Cognitive_Capacity">this one</a> have shown that merely having your smartphone in sight reduces your cognitive capacity.</p>
+
+<h3 id="real-and-healthy-relationships">Real (and Healthy) Relationships</h3>
+
+<p>Do I really need to explain this? When you don’t have a smartphone within reach, you actually start listening to the person in front of you. You’re truly present. You don’t check messages while talking, don’t scroll while walking or taking a break ,you begin to appreciate the world as it is, noticing small details you previously overlooked.</p>
+
+<h2 id="technical-benefits">Technical Benefits</h2>
+
+<p>Technical benefits refer to the practical and functional features of the dumbphone. Paradoxically, going back actually offers more advantages than moving forward.</p>
+
+<h3 id="battery-lasts-3-days-not-3-hours">Battery Lasts 3 Days (Not 3 Hours)</h3>
+
+<p>Although it may sound trivial, it’s worth emphasizing: the battery life of a dumbphone is LEGENDARY. You literally only need to charge it once every three days at most, and charging takes very little time. Plus, removable batteries are super convenient if you want to be sure you never run out of power.</p>
+
+<h3 id="privacy">Privacy</h3>
+
+<p>For me, this could fit under mental benefits, but it’s more appropriate here. It’s no secret that most apps these days (all for some people) collect data to exploit or sell it. Personally, I’m very pragmatic about privacy ,there’s no freedom without privacy, and there’s no real freedom with a smartphone.</p>
+
+<p>Nowadays, it’s incredibly hard to have a smartphone that truly keeps your activities private, especially with Google’s digital signature system making rooted devices unusable. In this context, a dumbphone is perfect ,it has no GPS, no Wi-Fi, nothing that tracks you.</p>
+
+<h3 id="minimal-and-functional-design">Minimal and Functional Design</h3>
+
+<p>All dumbphones have small screens and simple buttons. From a software perspective, there’s not much to say. This is actually a delicate topic, as the definition of dumbphone is still debated. Some say a phone with WhatsApp but all other dumbphone features counts, others disagree. Personally, I believe even a simple messaging app like WhatsApp ruins the true experience a dumbphone offers. When using a dumbphone, everything is simpler, more straightforward. If you need to reach someone, you call them directly instead of writing a message and waiting for a reply ,and they do the same with you.</p>
+
+<h2 id="its-not-all-or-nothing">It’s Not All or Nothing</h2>
+
+<p>Switching from a smartphone to a dumbphone <strong>doesn’t mean</strong> abandoning WhatsApp, Reddit, or YouTube altogether. It means using them less frequently. You can still access these platforms on your PC, which naturally reduces how often you check them and limits usage to only what’s necessary, exactly what we’re trying to achieve!</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>There are many other benefits I didn’t go into, like improved sleep quality (blue light is harmful), durability and sturdiness, ease of repair, and so on. I hope this list of reasons to buy an old used phone and ditch your smartphone inspires you to try it. I want to stress that switching to a dumbphone isn’t for everyone, but it could be for you!</p>]]></content><author><name>Samuele Amato</name><email>samuele@samueleamato.xyz</email></author><category term="new_website"/><summary type="html"><![CDATA[Imagine living in 2025 without notifications, without constant updates. While everyone carries a phone in their pocket with a thousand reasons to get distracted, I use a phone without apps, without social media, without distractions. Many would say I’m limited, but I say I’m free.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.weareteachers.com/wp-content/uploads/Can-Dumb-Phones-Solve-Educations-Student-Engagement-Issues.png"/><media:content medium="image" url="https://www.weareteachers.com/wp-content/uploads/Can-Dumb-Phones-Solve-Educations-Student-Engagement-Issues.png" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry><title type="html">My Experience with PSP Development</title><link href="https://samueleamato.xyz/2024/02/06/psp-development" rel="alternate" type="text/html" title="My Experience with PSP Development"/><published>2024-02-06T00:00:00+00:00</published><updated>2024-02-06T00:00:00+00:00</updated><id>https://samueleamato.xyz/2024/02/06/psp-development</id><content type="html" xml:base="https://samueleamato.xyz/2024/02/06/psp-development"><![CDATA[<p>The console that has stayed with me even <strong>twenty years</strong> later is the <strong>PlayStation Portable</strong>. 
+I still love this mobile device for various reasons. PSP is small enough to fit in a pocket and can be used on the move, which makes it incredibly convenient. 
+In addition to that, it also has audio outputs and excellent multimedia features. It serves as an MP3 player, thus making it a versatile entertainment gadget. 
+In terms of hardware, the device itself is impressive because of its bright screen, long-lasting battery, and expandable storage via Memory Stick Duo cards. 
+All these features make the PSP stand out till now.</p>
+
+<h2 id="why">Why?</h2>
+
+<p>Writing software for the PSP was mostly <strong>fun</strong>. It is not just that I have always been desirous of creating something which does not run only on a PC or 
+smartphone, infact PSP was perfect to offer me the chance. To develop for the PSP is an exclusive challenge demanding creativity and technical competence 
+and the result is more rewarding than what you get from common platforms.</p>
+
+<p>The prospect of understanding how PSP hardware works and optimizing code so 
+as to make it run efficiently on this device was very thrilling and educational at the same time. In addition, it enabled me understand the basics of 
+Lua programming language. Lua is easy to learn, lightweight high-level scripting language that has powerful applications especially in game development. 
+Using Lua on my PSP made me realize its simplicity and flexibility hence opened a way into future undertakings.</p>
+
+<p>Beyond coding, however, this project sought to expand the bounds of what can be done with this classic portable system.</p>
+
+<h2 id="what-i-did">What I Did</h2>
+
+<p>The first project I worked on was a light MP3 player designed to ensure good battery life while supporting functions that are not normally seen in PSP, and 
+such as turning off the screen when listening to music. The outcome was a software without GUI but with TUI (Text User Interface). This is vital for power 
+saving.</p>
+
+<p>You can see the result <a href="https://github.com/rdWei/UMusic">here</a>.</p>
+
+<h3 id="the-second-attempt">The second attempt</h3>
+
+<p>The Neofetch-like program was my second project created for the PSP. It displays various information including available RAM and microSD card space, as well
+as firmware details: version number plus its type on the screen.</p>
+
+<p align="center">
+  <img src="/assets/images/pspfetch.jpeg" alt="psp neofetch" width="600" />
+</p>
+
+<h2 id="how">How?</h2>
+
+<p>To create these two software, I used an interpreter called <a href="https://onelua.x10.mx/psp/docs/en">ONELua</a>, which supports PSP/PSVita/PS1/PS2/PS3. It was quite straightforward since Lua is a very 
+simple language. <a href="https://github.com/rdWei/UMusic">Here</a> is the source code of the first project.</p>]]></content><author><name>Samuele Amato</name><email>samuele@samueleamato.xyz</email></author><summary type="html"><![CDATA[The console that has stayed with me even twenty years later is the PlayStation Portable. I still love this mobile device for various reasons. PSP is small enough to fit in a pocket and can be used on the move, which makes it incredibly convenient. In addition to that, it also has audio outputs and excellent multimedia features. It serves as an MP3 player, thus making it a versatile entertainment gadget. In terms of hardware, the device itself is impressive because of its bright screen, long-lasting battery, and expandable storage via Memory Stick Duo cards. All these features make the PSP stand out till now.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://samueleamato.xyz/assets/images/pspfetch.jpeg"/><media:content medium="image" url="https://samueleamato.xyz/assets/images/pspfetch.jpeg" xmlns:media="http://search.yahoo.com/mrss/"/></entry><entry><title type="html">My Experience with PSP Development</title><link href="https://samueleamato.xyz/2024/02/06/psp-development" rel="alternate" type="text/html" title="My Experience with PSP Development"/><published>2024-02-06T00:00:00+00:00</published><updated>2024-02-06T00:00:00+00:00</updated><id>https://samueleamato.xyz/2024/02/06/psp-development</id><content type="html" xml:base="https://samueleamato.xyz/2024/02/06/psp-development"><![CDATA[<p>The console that has stayed with me even <strong>twenty years</strong> later is the <strong>PlayStation Portable</strong>. 
+I still love this mobile device for various reasons. PSP is small enough to fit in a pocket and can be used on the move, which makes it incredibly convenient. 
+In addition to that, it also has audio outputs and excellent multimedia features. It serves as an MP3 player, thus making it a versatile entertainment gadget. 
+In terms of hardware, the device itself is impressive because of its bright screen, long-lasting battery, and expandable storage via Memory Stick Duo cards. 
+All these features make the PSP stand out till now.</p>
+
+<h2 id="why">Why?</h2>
+
+<p>Writing software for the PSP was mostly <strong>fun</strong>. It is not just that I have always been desirous of creating something which does not run only on a PC or 
+smartphone, infact PSP was perfect to offer me the chance. To develop for the PSP is an exclusive challenge demanding creativity and technical competence 
+and the result is more rewarding than what you get from common platforms.</p>
+
+<p>The prospect of understanding how PSP hardware works and optimizing code so 
+as to make it run efficiently on this device was very thrilling and educational at the same time. In addition, it enabled me understand the basics of 
+Lua programming language. Lua is easy to learn, lightweight high-level scripting language that has powerful applications especially in game development. 
+Using Lua on my PSP made me realize its simplicity and flexibility hence opened a way into future undertakings.</p>
+
+<p>Beyond coding, however, this project sought to expand the bounds of what can be done with this classic portable system.</p>
+
+<h2 id="what-i-did">What I Did</h2>
+
+<p>The first project I worked on was a light MP3 player designed to ensure good battery life while supporting functions that are not normally seen in PSP, and 
+such as turning off the screen when listening to music. The outcome was a software without GUI but with TUI (Text User Interface). This is vital for power 
+saving.</p>
+
+<p>You can see the result <a href="https://github.com/rdWei/UMusic">here</a>.</p>
+
+<h3 id="the-second-attempt">The second attempt</h3>
+
+<p>The Neofetch-like program was my second project created for the PSP. It displays various information including available RAM and microSD card space, as well
+as firmware details: version number plus its type on the screen.</p>
+
+<p align="center">
+  <img src="/assets/images/pspfetch.jpeg" alt="psp neofetch" width="600" />
+</p>
+
+<h2 id="how">How?</h2>
+
+<p>To create these two software, I used an interpreter called <a href="https://onelua.x10.mx/psp/docs/en">ONELua</a>, which supports PSP/PSVita/PS1/PS2/PS3. It was quite straightforward since Lua is a very 
+simple language. <a href="https://github.com/rdWei/UMusic">Here</a> is the source code of the first project.</p>]]></content><author><name>Samuele Amato</name><email>samuele@samueleamato.xyz</email></author><category term="new_website"/><summary type="html"><![CDATA[The console that has stayed with me even twenty years later is the PlayStation Portable. I still love this mobile device for various reasons. PSP is small enough to fit in a pocket and can be used on the move, which makes it incredibly convenient. In addition to that, it also has audio outputs and excellent multimedia features. It serves as an MP3 player, thus making it a versatile entertainment gadget. In terms of hardware, the device itself is impressive because of its bright screen, long-lasting battery, and expandable storage via Memory Stick Duo cards. All these features make the PSP stand out till now.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://samueleamato.xyz/assets/images/pspfetch.jpeg"/><media:content medium="image" url="https://samueleamato.xyz/assets/images/pspfetch.jpeg" xmlns:media="http://search.yahoo.com/mrss/"/></entry></feed>
