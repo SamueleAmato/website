@@ -10,11 +10,14 @@
 <meta name="author" content="Samuele Amato">
 <meta name="description" content="Samuele Amato's contact page.">
 <style>
+.container {
+    zoom: 1.44;
+    /* Oppure: */
+    /* transform: scale(1.44); */
+    /* transform-origin: top left; */
+    width: calc(100% / 1.44); /* Compensa l'ingrandimento */
+}
 body {
-        transform: scale(1.44);
-    transform-origin: center center;
-    overflow: hidden;
-
     margin: 0;
     padding: 20px;
     width: 100%;
