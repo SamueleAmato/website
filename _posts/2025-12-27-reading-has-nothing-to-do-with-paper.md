@@ -1,4 +1,3 @@
-
 ---
 title: "Reading has nothing to do with paper"
 date: 2025-12-27
