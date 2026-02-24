@@ -1,5 +1,5 @@
 ---
-title: "Stop Writing `if` in Bash"
+title: "Stop Writing if in Bash"
 date: 2026-02-24
 hn_id: td 
 ---
