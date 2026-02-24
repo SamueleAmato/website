@@ -4,8 +4,6 @@ date: 2026-02-24
 hn_id: td 
 ---
 
-# Stop Writing `if` in Bash
-
 Don’t act as though Bash is Python, or C. The most frequent trouble
 with shell scripts is using too many `if` statements for simple control.
 Although you’ll need conditional logic at times, Bash has its own,
