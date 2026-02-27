@@ -21,8 +21,10 @@ body {
     min-height: 100vh;
     background: #ffffff;
     color: #000000;
-    font-family: "Times New Roman", Times, serif;
+    /* --- FONT MODIFICATO QUI --- */
+    font-family: "Linux Libertine", "Linux Libertine O", serif;
 }
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -72,7 +74,6 @@ span.post-date {
 
 
 <br><br>
-<!-- Lista dei post -->
 <ul class="posts-list">
 {% for post in site.posts %}
     <li>
@@ -85,4 +86,4 @@ span.post-date {
 <a href="{{ '/' | relative_url }}">← back to homepage</a>
 </div>
 </body>
-</html>
+</html>---
