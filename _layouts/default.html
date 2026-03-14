@@ -13,108 +13,163 @@ layout: null
 <meta property="og:image" content="{{ page.image }}" />
 {% endif %}
 <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
 <style>
+:root {
+    --wp--preset--color--base: #f9f9f9;
+    --wp--preset--color--contrast: #111111;
+    --wp--preset--color--custom-blue: #0f4c81;
+    --wp--preset--font-family--instrument-serif: "Instrument Serif", serif;
+    --wp--preset--font-family--lora: "Lora", serif;
+    --wp--preset--font-size--medium: 1.05rem;
+    --wp--preset--font-size--xx-large: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 1.283), 3.27rem);
+}
+
 body {
-    zoom: 1.2;
     overflow-x: hidden;
     margin: 0;
     padding: 20px;
     width: 100%;
     min-height: 100vh;
-    background: #ffffff;
-    color: #000000;
-    /* --- FONT MODIFICATO QUI --- */
-    font-family: "Linux Libertine", "Linux Libertine O", serif;
+    box-sizing: border-box;
+    /* --- NUOVI STILI SFONDO E FONT --- */
+    background: var(--wp--preset--color--base);
+    color: var(--wp--preset--color--contrast);
+    font-family: var(--wp--preset--font-family--lora);
+    font-size: var(--wp--preset--font-size--medium);
+    line-height: 1.55;
 }
+
 .container {
-    max-width: 650px;
+    max-width: 620px; /* Modificato per corrispondere al layout originale */
     margin: 0 auto;
     padding-top: 20px;
 }
+
 .post-header {
     text-align: center;
     margin-bottom: 40px;
 }
+
 .post-title {
-    font-size: 2em;
-    font-weight: bold;
-    font-style: italic;
+    /* --- STILE TITOLO H1 --- */
+    color: var(--wp--preset--color--custom-blue);
+    font-family: var(--wp--preset--font-family--instrument-serif);
+    font-size: var(--wp--preset--font-size--xx-large);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.15;
     margin: 0 0 10px 0;
+    word-break: break-word;
 }
+
 .post-date {
     color: #666;
     font-size: 0.9em;
     margin-bottom: 20px;
+    font-family: var(--wp--preset--font-family--lora);
 }
+
 .post-image {
     text-align: center;
     margin: 30px 0;
 }
+
 .post-image img {
     max-width: 100%;
     height: auto;
 }
+
 .post-content {
-    line-height: 1.6;
     text-align: left;
 }
+
 .post-content p {
     margin: 1em 0;
 }
+
+/* --- STILE SOTTOTITOLI NEL CONTENUTO --- */
+.post-content h1,
 .post-content h2,
 .post-content h3,
-.post-content h4 {
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    color: var(--wp--preset--color--custom-blue);
+    font-family: var(--wp--preset--font-family--instrument-serif);
+    font-weight: 400;
+    line-height: 1.2;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
 }
+
 .post-content a {
-    color: blue;
+    color: var(--wp--preset--color--custom-blue);
     text-decoration: underline;
 }
+
 .post-content a:visited {
     color: purple;
 }
+
 .post-content a:hover {
-    color: blue;
+    color: #0b3960; /* Leggermente più scuro al passaggio del mouse */
 }
+
 .post-content a:active {
     color: red;
 }
+
 .post-content code {
-    background: #f4f4f4;
+    background: #e8e8e8;
     padding: 2px 5px;
     font-family: monospace;
+    font-size: 0.9em;
 }
+
 .post-content pre {
-    background: #f4f4f4;
+    background: #e8e8e8;
     padding: 15px;
     overflow-x: auto;
+    border-radius: 4px;
 }
+
 .post-content pre code {
     background: none;
     padding: 0;
 }
+
 .back-link {
     text-align: center;
     margin: 40px 0 20px 0;
 }
+
 .back-link a {
-    color: blue;
+    color: var(--wp--preset--color--custom-blue);
     text-decoration: underline;
 }
+
 .back-link a:visited {
     color: purple;
 }
+
 .back-link a:hover {
-    color: blue;
+    color: #0b3960;
 }
+
 .back-link a:active {
     color: red;
 }
+
 #bluesky-comments {
     margin: 40px 0;
     text-align: center;
 }
+
 .footer {
     text-align: center;
     margin-top: 40px;
