@@ -1,106 +1,213 @@
 ---
+layout: null
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>projects</title>
+<title>projects | Samuele Amato</title>
 <meta name="author" content="Samuele Amato">
-<meta name="description" content="Samuele Amato's blog posts.">
+<meta name="description" content="Samuele Amato's projects.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
 <style>
+/* --- VARIABILI DI TEMA (CHIARO/SCURO) --- */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #111111;
+    --heading-color: #222222;
+    --link-color: #444444;
+    --link-hover: #000000;
+    
+    --font-family--headings: "Instrument Serif", serif;
+    --font-family--body: "Lora", serif;
+    --font-size--medium: 1.05rem;
+    --font-size--xx-large: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 1.283), 3.27rem);
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --link-color: #aaaaaa;
+    --link-hover: #ffffff;
+}
+
 body {
-    zoom: 1.2;
-    overflow: hidden;
+    overflow-x: hidden;
     margin: 0;
     padding: 20px;
     width: 100%;
     min-height: 100vh;
-    background: #ffffff;
-    color: #000000;
-    font-family: "Times New Roman", Times, serif;
+    box-sizing: border-box;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family--body);
+    font-size: var(--font-size--medium);
+    line-height: 1.55;
+    transition: background 0.2s ease, color 0.2s ease;
 }
+
+/* --- PULSANTE DARK MODE SUCKLESS --- */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-family: monospace;
+    font-size: 0.9em;
+    cursor: pointer;
+    padding: 5px;
+}
+.theme-toggle:hover {
+    text-decoration: underline;
+}
+
 .container {
-    max-width: 800px;
+    max-width: 620px; /* Allineato alle altre pagine */
     margin: 0 auto;
     padding-top: 40px;
 }
+
+/* --- STILI TITOLO --- */
+.page-title {
+    color: var(--heading-color);
+    font-family: var(--font-family--headings);
+    font-size: var(--font-size--xx-large);
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 30px 0;
+}
+
+/* --- LINK --- */
 a {
-    color: blue;
+    color: var(--link-color);
     text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
 }
-a:visited {
-    color: purple;
-}
+
 a:hover {
-    color: blue;
-    text-decoration: underline;
+    color: var(--link-hover);
 }
-a:active {
-    color: red;
+
+/* --- TABELLA PROGETTI --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
-ul.posts-list {
-    list-style: none;
-    padding-left: 0;
+
+table td {
+    padding: 12px 0;
+    vertical-align: top;
+    border-bottom: 1px dashed var(--link-color); /* Separatore testuale molto minimal */
 }
-ul.posts-list li {
-    margin: 10px 0;
+
+/* Rimuovi il bordo dall'ultima riga per pulizia */
+table tr:last-child td {
+    border-bottom: none;
 }
-span.post-date {
-    color: gray;
-    margin-right: 10px;
+
+/* Colonna dei link */
+table td:first-child {
+    width: 30%;
+    padding-right: 15px;
+    font-style: italic; /* Fa risaltare il nome del progetto */
+}
+
+i {
+    font-style: italic;
+}
+
+.back-link {
+    margin-top: 40px;
+    display: inline-block;
+    font-size: 0.9em;
+}
+
+/* --- RESPONSIVE PER SMARTPHONE --- */
+@media (max-width: 500px) {
+    table td:first-child {
+        width: auto;
+        padding-right: 10px;
+    }
 }
 </style>
 </head>
-<div class="container"> 
 <body>
-    <font size="7"><i><b>PROJECTS</b></i></font>
-    <br><br>
-    <p><i>Here are some of the projects I’ve created.</i></p>
-    <br>
 
+<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">[ dark ]</button>
+
+<div class="container">
+    
+    <h1 class="page-title">PROJECTS</h1>
+    
+    <p><i>Here are some of the projects I’ve created.</i></p>
+    
     <table>
-            <tr>
-                <td><a href="https://github.com/rdWei/C-rypt">C-rypt</a></td>
-                <td>Easy-to-use steganography tool entirely written in C.</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/rdWei/mousice">mousice</a></td>
-                <td>Suckless CLI YouTube Music player.</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/rdWei/Near">Near</a></td>
-                <td>All-in-one OSINT toolkit.</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/rdWei/Lawliet">Lawliet</a></td>
-                <td>Track down social media profiles.</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/rdWei/exaPhisher">exaPhisher</a></td>
-                <td>Social media phishing suite written in Python &amp; PHP.</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/rdWei/OsintTube">OsintTube</a></td>
-                <td>An easy-to-use YouTube OSINT tool.</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/rdWei/sosec">sosec</a></td>
-                <td>Social media hacking suite.</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/rdWei/RMirror">RMirror</a></td>
-                <td>Export all your reMarkable notes to your PC as PDF.</td>
-            </tr>
-            <tr>
-                <td><a href="https://github.com/rdWei/UMusic">UMusic</a></td>
-                <td>A feature-rich, lightweight PSP music player.</td>
-            </tr>
-        </table>
-<br>
-<a href="{{ '/' | relative_url }}">← back to homepage</a>
+        <tr>
+            <td><a href="https://github.com/rdWei/C-rypt">C-rypt</a></td>
+            <td>Easy-to-use steganography tool entirely written in C.</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/rdWei/mousice">mousice</a></td>
+            <td>Suckless CLI YouTube Music player.</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/rdWei/Near">Near</a></td>
+            <td>All-in-one OSINT toolkit.</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/rdWei/Lawliet">Lawliet</a></td>
+            <td>Track down social media profiles.</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/rdWei/exaPhisher">exaPhisher</a></td>
+            <td>Social media phishing suite written in Python &amp; PHP.</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/rdWei/OsintTube">OsintTube</a></td>
+            <td>An easy-to-use YouTube OSINT tool.</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/rdWei/sosec">sosec</a></td>
+            <td>Social media hacking suite.</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/rdWei/RMirror">RMirror</a></td>
+            <td>Export all your reMarkable notes to your PC as PDF.</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/rdWei/UMusic">UMusic</a></td>
+            <td>A feature-rich, lightweight PSP music player.</td>
+        </tr>
+    </table>
+
+    <a href="{{ '/' | relative_url }}" class="back-link">← back to homepage</a>
+
 </div>
-</div>
+
+<script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    toggleBtn.textContent = currentTheme === 'dark' ? '[ light ]' : '[ dark ]';
+
+    toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        toggleBtn.textContent = theme === 'dark' ? '[ light ]' : '[ dark ]';
+    });
+</script>
 </body>
 </html>
