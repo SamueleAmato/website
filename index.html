@@ -1,23 +1,144 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SAMUELE AMATO</title>
 <link rel="icon" href="https://samueleamato.xyz/favicon.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
 <style>
+/* --- VARIABILI DI TEMA (CHIARO/SCURO) --- */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #111111;
+    --heading-color: #222222;
+    --link-color: #444444;
+    --link-hover: #000000;
+    
+    --font-family--headings: "Instrument Serif", serif;
+    --font-family--body: "Lora", serif;
+    --font-size--medium: 1.05rem;
+    --font-size--xx-large: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 1.283), 4rem);
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --link-color: #aaaaaa;
+    --link-hover: #ffffff;
+}
+
 body {
-    /* --- FONT MODIFICATO QUI --- */
-    font-family: "Linux Libertine", "Linux Libertine O", serif;
-    top: 0; left: 0; width: 99%; height: 97%;
-    position: absolute; display: table;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family--body);
+    font-size: var(--font-size--medium);
+    line-height: 1.55;
+    transition: background 0.2s ease, color 0.2s ease;
+    
+    /* Centratura perfetta dei contenuti nello schermo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-p {
-    display: table-cell; vertical-align: middle; text-align: center;
+
+/* --- PULSANTE DARK MODE SUCKLESS --- */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-family: monospace;
+    font-size: 0.9em;
+    cursor: pointer;
+    padding: 5px;
 }
-#timezone * {
-    text-decoration: none;
+.theme-toggle:hover {
+    text-decoration: underline;
+}
+
+.content-wrapper {
+    text-align: center;
+    max-width: 620px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- STILI TITOLO --- */
+.page-title {
+    color: var(--heading-color);
+    font-family: var(--font-family--headings);
+    font-size: var(--font-size--xx-large);
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+}
+
+/* --- IMMAGINE CENTRALE --- */
+.hero-image {
+    width: 100%;
+    max-width: 560px; /* Larghezza massima dell'immagine originale */
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- LINK E NAVIGAZIONE --- */
+a {
+    color: var(--link-color);
+    text-decoration: none; /* Tolta la sottolineatura generale per renderlo più pulito come nell'originale */
+}
+
+a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+.timezone-info {
+    margin-bottom: 30px;
+    font-size: 0.9em;
+}
+
+.timezone-info a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+.nav-links {
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.nav-links a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    margin: 0 5px;
 }
 </style>
 
 <script>
+// Script Orologio Originale
 const options = {
     timeZone: 'Europe/Rome',
     hour: 'numeric',
@@ -28,36 +149,56 @@ const options = {
 const formatter = new Intl.DateTimeFormat([], options);
 
 setInterval(() => {
-    document.getElementById("time").innerText =
-        formatter.format(new Date());
+    const timeElement = document.getElementById("time");
+    if (timeElement) {
+        timeElement.innerText = formatter.format(new Date());
+    }
 }, 1000);
 </script>
 </head>
+<body>
 
-<body class="vc-init" cz-shortcut-listen="true"><p>
-<font size="7"><i><b>SAMUELE AMATO</b></i></font> <br>
-<br>
-<img src="assets/images/bg.jpg" style="width:560px;"><br>
-<br>
-<span id="timezone">
-<i>
-<a href="https://24timezones.com/current_time/italy_rome_clock.php">
-TIME IN ITALY
-</a>
- —
-<span id="time">8:53:38 PM</span>
- <a href="https://24timezones.com/time-zone/cet">CET</a>
-</i>
-</span>
-<br><br>
+<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">[ dark ]</button>
 
-<a href="https://samueleamato.xyz/about.html">about</a> //
-<a href="https://samueleamato.xyz/blog.html">blog</a> //
-<a href="https://drive.proton.me/urls/0K7CYY9P7M#5EtkxsYKIxck">resume</a> //
-<a href="https://samueleamato.xyz/contact.html">contact</a> //
-<a href="https://samueleamato.xyz/projects.html">projects</a>
+<div class="content-wrapper">
+    
+    <h1 class="page-title">SAMUELE AMATO</h1>
+    
+    <img src="assets/images/bg.jpg" alt="Background" class="hero-image">
+    
+    <div class="timezone-info">
+        <i>
+            <a href="https://24timezones.com/current_time/italy_rome_clock.php" target="_blank">TIME IN ITALY</a>
+            —
+            <span id="time">Loading...</span>
+            <a href="https://24timezones.com/time-zone/cet" target="_blank">CET</a>
+        </i>
+    </div>
 
-<br>
-<br>
+    <div class="nav-links">
+        <a href="https://samueleamato.xyz/about.html">about</a> //
+        <a href="https://samueleamato.xyz/blog.html">blog</a> //
+        <a href="https://drive.proton.me/urls/0K7CYY9P7M#5EtkxsYKIxck">resume</a> //
+        <a href="https://samueleamato.xyz/contact.html">contact</a> //
+        <a href="https://samueleamato.xyz/projects.html">projects</a>
+    </div>
 
-</p></body></html>
+</div>
+
+<script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    toggleBtn.textContent = currentTheme === 'dark' ? '[ light ]' : '[ dark ]';
+
+    toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        toggleBtn.textContent = theme === 'dark' ? '[ light ]' : '[ dark ]';
+    });
+</script>
+
+</body>
+</html>
