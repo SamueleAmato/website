@@ -1,89 +1,178 @@
 ---
+layout: null
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>blog</title>
+<title>blog | Samuele Amato</title>
 <meta name="author" content="Samuele Amato">
 <meta name="description" content="Samuele Amato's blog posts.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
 <style>
-html {
-    zoom: 1.2; /* 120% */
+/* --- VARIABILI DI TEMA (CHIARO/SCURO) --- */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #111111;
+    --heading-color: #222222;
+    --link-color: #444444;
+    --link-hover: #000000;
+    
+    --font-family--headings: "Instrument Serif", serif;
+    --font-family--body: "Lora", serif;
+    --font-size--medium: 1.05rem;
+    --font-size--xx-large: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 1.283), 3.27rem);
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --link-color: #aaaaaa;
+    --link-hover: #ffffff;
 }
 
 body {
+    overflow-x: hidden;
     margin: 0;
     padding: 20px;
     width: 100%;
     min-height: 100vh;
-    background: #ffffff;
-    color: #000000;
-    /* --- FONT MODIFICATO QUI --- */
-    font-family: "Linux Libertine", "Linux Libertine O", serif;
+    box-sizing: border-box;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family--body);
+    font-size: var(--font-size--medium);
+    line-height: 1.55;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* --- PULSANTE DARK MODE SUCKLESS --- */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-family: monospace;
+    font-size: 0.9em;
+    cursor: pointer;
+    padding: 5px;
+}
+.theme-toggle:hover {
+    text-decoration: underline;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 620px; /* Stessa larghezza degli articoli */
     margin: 0 auto;
     padding-top: 40px;
 }
+
+/* --- STILI TITOLO --- */
+.page-header {
+    margin-bottom: 40px;
+}
+
+.page-title {
+    color: var(--heading-color);
+    font-family: var(--font-family--headings);
+    font-size: var(--font-size--xx-large);
+    font-weight: 400;
+    font-style: italic; /* Mantenuto il corsivo che avevi originariamente */
+    line-height: 1.15;
+    margin: 0 0 5px 0;
+}
+
+/* --- STILI LISTA E LINK --- */
 a {
-    color: blue;
+    color: var(--link-color);
     text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
 }
-a:visited {
-    color: purple;
-}
+
 a:hover {
-    color: blue;
-    text-decoration: underline;
+    color: var(--link-hover);
 }
-a:active {
-    color: red;
-}
+
 ul.posts-list {
     list-style: none;
     padding-left: 0;
+    margin: 0 0 40px 0;
 }
+
 ul.posts-list li {
-    margin: 10px 0;
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap; /* Per evitare che la data e il titolo si sovrappongano su schermi minuscoli */
+    align-items: baseline;
 }
+
 span.post-date {
-    color: gray;
-    margin-right: 10px;
+    color: #666;
+    margin-right: 15px;
+    font-size: 0.9em;
+    min-width: 90px; /* Tiene allineati i titoli degli articoli se le date hanno la stessa larghezza */
+}
+
+[data-theme="dark"] span.post-date {
+    color: #888;
+}
+
+.back-link {
+    font-size: 0.9em;
+    margin-top: 20px;
 }
 </style>
 </head>
 <body>
+
+<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">[ dark ]</button>
+
 <div class="container">
 
-<p style="font-size: 1.5em; text-align: center;">
-</p>
+    <div class="page-header">
+        <h1 class="page-title">BLOG INDEX</h1>
+        <div class="rss-link">
+            <small><a href="{{ '/feed.xml' | relative_url }}"><i>rss</i></a></small>
+        </div>
+    </div>
 
-<div style="display: inline-block; text-align: left;">
-  <p style="font-size: 3em; font-weight: bold; font-style: italic; margin: 0;">
-    BLOG INDEX
-  </p>
-  <p style="font-size: 1.5em; text-align: center; margin: 0;">
-    <small><a href="rss.xml"><i>rss</i></a></small>
-  </p>
+    <ul class="posts-list">
+    {% for post in site.posts %}
+        <li>
+            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+    
+    <div class="back-link">
+        <a href="{{ '/' | relative_url }}">← back to homepage</a>
+    </div>
+
 </div>
 
+<script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    toggleBtn.textContent = currentTheme === 'dark' ? '[ light ]' : '[ dark ]';
 
-<br><br>
-<ul class="posts-list">
-{% for post in site.posts %}
-    <li>
-        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>
-{% endfor %}
-</ul>
-<br>
-<a href="{{ '/' | relative_url }}">← back to homepage</a>
-</div>
+    toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        toggleBtn.textContent = theme === 'dark' ? '[ light ]' : '[ dark ]';
+    });
+</script>
 </body>
 </html>
