@@ -19,14 +19,32 @@ layout: null
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
 <style>
+/* --- VARIABILI DI TEMA (CHIARO/SCURO) --- */
 :root {
-    --wp--preset--color--base: #f9f9f9;
-    --wp--preset--color--contrast: #111111;
-    --wp--preset--color--custom-blue: #0f4c81;
-    --wp--preset--font-family--instrument-serif: "Instrument Serif", serif;
-    --wp--preset--font-family--lora: "Lora", serif;
-    --wp--preset--font-size--medium: 1.05rem;
-    --wp--preset--font-size--xx-large: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 1.283), 3.27rem);
+    --bg-color: #f9f9f9;
+    --text-color: #111111;
+    --heading-color: #222222; /* Grigio molto scuro, non più blu */
+    --link-color: #444444;
+    --link-hover: #000000;
+    --code-bg: #e8e8e8;
+    --code-text: #222222;
+    --border-color: #dddddd;
+    
+    --font-family--headings: "Instrument Serif", serif;
+    --font-family--body: "Lora", serif;
+    --font-size--medium: 1.05rem;
+    --font-size--xx-large: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 1.283), 3.27rem);
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --link-color: #aaaaaa;
+    --link-hover: #ffffff;
+    --code-bg: #1e1e1e;
+    --code-text: #cccccc;
+    --border-color: #333333;
 }
 
 body {
@@ -36,18 +54,35 @@ body {
     width: 100%;
     min-height: 100vh;
     box-sizing: border-box;
-    /* --- NUOVI STILI SFONDO E FONT --- */
-    background: var(--wp--preset--color--base);
-    color: var(--wp--preset--color--contrast);
-    font-family: var(--wp--preset--font-family--lora);
-    font-size: var(--wp--preset--font-size--medium);
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family--body);
+    font-size: var(--font-size--medium);
     line-height: 1.55;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* --- PULSANTE DARK MODE SUCKLESS --- */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-family: monospace;
+    font-size: 0.9em;
+    cursor: pointer;
+    padding: 5px;
+}
+.theme-toggle:hover {
+    text-decoration: underline;
 }
 
 .container {
-    max-width: 620px; /* Modificato per corrispondere al layout originale */
+    max-width: 620px;
     margin: 0 auto;
-    padding-top: 20px;
+    padding-top: 40px; /* Aumentato leggermente per fare spazio al pulsante in alto */
 }
 
 .post-header {
@@ -56,10 +91,9 @@ body {
 }
 
 .post-title {
-    /* --- STILE TITOLO H1 --- */
-    color: var(--wp--preset--color--custom-blue);
-    font-family: var(--wp--preset--font-family--instrument-serif);
-    font-size: var(--wp--preset--font-size--xx-large);
+    color: var(--heading-color);
+    font-family: var(--font-family--headings);
+    font-size: var(--font-size--xx-large);
     font-weight: 400;
     font-style: normal;
     line-height: 1.15;
@@ -71,8 +105,10 @@ body {
     color: #666;
     font-size: 0.9em;
     margin-bottom: 20px;
-    font-family: var(--wp--preset--font-family--lora);
+    font-family: var(--font-family--body);
 }
+
+[data-theme="dark"] .post-date { color: #888; }
 
 .post-image {
     text-align: center;
@@ -92,95 +128,82 @@ body {
     margin: 1em 0;
 }
 
-/* --- STILE SOTTOTITOLI NEL CONTENUTO --- */
 .post-content h1,
 .post-content h2,
 .post-content h3,
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-    color: var(--wp--preset--color--custom-blue);
-    font-family: var(--wp--preset--font-family--instrument-serif);
+    color: var(--heading-color);
+    font-family: var(--font-family--headings);
     font-weight: 400;
     line-height: 1.2;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
 }
 
-.post-content a {
-    color: var(--wp--preset--color--custom-blue);
+.post-content a, .back-link a {
+    color: var(--link-color);
     text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
 }
 
-.post-content a:visited {
-    color: purple;
+.post-content a:hover, .back-link a:hover {
+    color: var(--link-hover);
 }
 
-.post-content a:hover {
-    color: #0b3960; /* Leggermente più scuro al passaggio del mouse */
-}
-
-.post-content a:active {
-    color: red;
-}
-
+/* --- STILE BLOCCHI DI CODICE MINIMALI --- */
 .post-content code {
-    background: #e8e8e8;
+    background: var(--code-bg);
+    color: var(--code-text);
     padding: 2px 5px;
     font-family: monospace;
     font-size: 0.9em;
+    border-radius: 0; /* Angoli netti */
 }
 
 .post-content pre {
-    background: #e8e8e8;
+    background: var(--code-bg);
     padding: 15px;
     overflow-x: auto;
-    border-radius: 4px;
+    border-radius: 0; /* Angoli netti */
+    border: 1px solid var(--border-color); /* Bordo leggero */
 }
 
 .post-content pre code {
     background: none;
     padding: 0;
+    color: inherit;
+    border: none;
 }
+
+/* --- COLORI SINTASSI (BASE JEKYLL ROUGE) --- */
+.highlight .c { color: #888888; font-style: italic; } /* Commenti */
+.highlight .k { color: #d73a49; font-weight: bold; } /* Keyword */
+.highlight .s { color: #032f62; } /* Stringhe */
+.highlight .nf { color: #6f42c1; } /* Funzioni */
+
+[data-theme="dark"] .highlight .k { color: #ff7b72; }
+[data-theme="dark"] .highlight .s { color: #a5d6ff; }
+[data-theme="dark"] .highlight .nf { color: #d2a8ff; }
 
 .back-link {
     text-align: center;
     margin: 40px 0 20px 0;
-}
-
-.back-link a {
-    color: var(--wp--preset--color--custom-blue);
-    text-decoration: underline;
-}
-
-.back-link a:visited {
-    color: purple;
-}
-
-.back-link a:hover {
-    color: #0b3960;
-}
-
-.back-link a:active {
-    color: red;
+    font-size: 0.9em;
 }
 
 #bluesky-comments {
     margin: 40px 0;
     text-align: center;
 }
-
-.footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px 0;
-    color: #666;
-    font-size: 0.9em;
-    border-top: 1px solid #ddd;
-}
 </style>
 </head>
 <body>
+
+<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">[ dark ]</button>
+
 <div class="container">
     <div class="post-header">
         {% if page.title %}
@@ -202,10 +225,10 @@ body {
     </div>
 
     <div class="back-link">
-        <a href="{{ '/blog.html' | relative_url }}">← back to blog</a>
-        //
+        <a href="{{ '/blog.html' | relative_url }}">← back</a>
+        &nbsp;&nbsp;&nbsp;
         <a href="{{ '/' | relative_url }}">home</a>
-        //
+        &nbsp;&nbsp;&nbsp;
         <a href="{{ '/feed.xml' | relative_url }}">rss</a>
     </div>
 
@@ -214,12 +237,24 @@ body {
     <hn-comments itemId="{{ page.hn_id }}"></hn-comments>
     {% endif %}
     </div>
-
-    <div class="footer">
-        &copy; {{ site.time | date: "%Y" }} Samuele Amato
-    </div>
 </div>
 
 <script src="{{ '/script.js' | relative_url }}"></script>
+
+<script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    // Controlla se c'è un tema salvato, altrimenti usa le preferenze del sistema
+    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    toggleBtn.textContent = currentTheme === 'dark' ? '[ light ]' : '[ dark ]';
+
+    toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        toggleBtn.textContent = theme === 'dark' ? '[ light ]' : '[ dark ]';
+    });
+</script>
 </body>
 </html>
