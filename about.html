@@ -1,77 +1,189 @@
 ---
+layout: null
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>about</title>
+<title>about | Samuele Amato</title>
 <meta name="author" content="Samuele Amato">
 <meta name="description" content="Samuele Amato's contact page.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
 <style>
+/* --- VARIABILI DI TEMA (CHIARO/SCURO) --- */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #111111;
+    --heading-color: #222222;
+    --link-color: #444444;
+    --link-hover: #000000;
+    
+    --font-family--headings: "Instrument Serif", serif;
+    --font-family--body: "Lora", serif;
+    --font-size--medium: 1.05rem;
+    --font-size--xx-large: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 1.283), 3.27rem);
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --link-color: #aaaaaa;
+    --link-hover: #ffffff;
+}
+
 body {
-    overflow: hidden;
-    zoom: 1.2;
+    overflow-x: hidden;
     margin: 0;
     padding: 20px;
     width: 100%;
     min-height: 100vh;
-    background: #ffffff;
-    color: #000000;
-    /* --- FONT MODIFICATO QUI --- */
-    font-family: "Linux Libertine", "Linux Libertine O", serif;
+    box-sizing: border-box;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family--body);
+    font-size: var(--font-size--medium);
+    line-height: 1.55;
+    transition: background 0.2s ease, color 0.2s ease;
 }
+
+/* --- PULSANTE DARK MODE SUCKLESS --- */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-family: monospace;
+    font-size: 0.9em;
+    cursor: pointer;
+    padding: 5px;
+}
+.theme-toggle:hover {
+    text-decoration: underline;
+}
+
 .container {
-    max-width: 800px;
+    max-width: 620px; /* Allineato alle altre pagine */
     margin: 0 auto;
     padding-top: 40px;
 }
+
+/* --- STILI TITOLO --- */
+.page-title {
+    color: var(--heading-color);
+    font-family: var(--font-family--headings);
+    font-size: var(--font-size--xx-large);
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 30px 0;
+}
+
+/* --- LINK --- */
 a {
-    color: blue;
+    color: var(--link-color);
     text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
 }
-a:visited {
-    color: purple;
-}
+
 a:hover {
-    color: blue;
-    text-decoration: underline;
+    color: var(--link-hover);
 }
-a:active {
-    color: red;
+
+/* --- LAYOUT PROFILO --- */
+.about-content {
+    margin-bottom: 20px;
 }
-ul {
-    padding-left: 220px;
+
+/* Clearfix per contenere l'immagine fluttuante */
+.about-content::after {
+    content: "";
+    display: table;
+    clear: both;
 }
-ul li {
+
+.profile-img {
+    float: left;
+    width: 180px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.about-content p {
+    margin-top: 0;
+}
+
+ul.about-links {
+    padding-left: 200px; /* 180px di immagine + 20px di margine */
+    margin-top: 0;
+}
+
+ul.about-links li {
     margin: 5px 0;
 }
-p {
-    text-align: left;
+
+.back-link {
+    margin-top: 40px;
+    display: inline-block;
+    font-size: 0.9em;
 }
-i {
-    font-style: italic;
+
+/* --- RESPONSIVE PER SMARTPHONE --- */
+@media (max-width: 500px) {
+    .profile-img {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+    ul.about-links {
+        padding-left: 20px; /* Ripristina il padding normale su schermi piccoli */
+    }
 }
 </style>
 </head>
 <body>
-<div class="container">
-    <font size="7"><i><b>ABOUT</b></i></font>
-    <br><br>
-    <p><img src="assets/images/pfp.png" align="left" style="width:180px; padding-right:10px">
-    <br>
-    I’m a 19-year-old developer who enjoys working with low-level systems. I share some of my projects on GitHub, ranging from <a href="https://github.com/SamueleAmato?tab=repositories&q=&type=&language=c&sort=">small C utilities</a> to <a href="https://github.com/search?q=owner%3ASamueleAmato+osint&type=repositories">OSINT tools</a>. Beyond programming, I like writing (<a href="samueleamato.xyz/blog.html">not just code!</a>) and have a strong interest in philosophy and biology, which influence how I think and create.
-    </p>
-    <ul>
-    <li><a href="https://samueleamato.xyz/2025/07/30/hardware-i-use">my gear</a></li>
-    <li><a href="https://drive.proton.me/urls/FFE01W2TPR#rq0ORn4VNLOQ">my schedule</a></li>
-    <li><a href="picsilike.html">pics I find inspiring</a></li>
-    </ul>
 
-    <br>
-    <br>
-    <a href="{{ '/' | relative_url }}">← back to homepage</a>
+<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">[ dark ]</button>
+
+<div class="container">
+    
+    <h1 class="page-title">ABOUT</h1>
+    
+    <div class="about-content">
+        <img src="assets/images/pfp.png" class="profile-img" alt="Samuele Amato Profile Picture">
+        
+        <p>I’m a 19-year-old developer who enjoys working with low-level systems. I share some of my projects on GitHub, ranging from <a href="https://github.com/SamueleAmato?tab=repositories&q=&type=&language=c&sort=">small C utilities</a> to <a href="https://github.com/search?q=owner%3ASamueleAmato+osint&type=repositories">OSINT tools</a>. Beyond programming, I like writing (<a href="https://samueleamato.xyz/blog.html">not just code!</a>) and have a strong interest in philosophy and biology, which influence how I think and create.</p>
+        
+        <ul class="about-links">
+            <li><a href="https://samueleamato.xyz/2025/07/30/hardware-i-use">my gear</a></li>
+            <li><a href="https://drive.proton.me/urls/FFE01W2TPR#rq0ORn4VNLOQ">my schedule</a></li>
+            <li><a href="picsilike.html">pics I find inspiring</a></li>
+        </ul>
+    </div>
+
+    <a href="{{ '/' | relative_url }}" class="back-link">← back to homepage</a>
 </div>
+
+<script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    toggleBtn.textContent = currentTheme === 'dark' ? '[ light ]' : '[ dark ]';
+
+    toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        toggleBtn.textContent = theme === 'dark' ? '[ light ]' : '[ dark ]';
+    });
+</script>
 </body>
 </html>
