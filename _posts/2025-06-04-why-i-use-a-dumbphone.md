@@ -1,5 +1,5 @@
 ---
-title: "Why I Use a Dumbphone in 2025 (and Why You Should Too)"
+title: "Why I Use a Dumbphone in 2025"
 date: 2025-06-04
 image: https://www.weareteachers.com/wp-content/uploads/Can-Dumb-Phones-Solve-Educations-Student-Engagement-Issues.png 
 hn_id: 44178418 
