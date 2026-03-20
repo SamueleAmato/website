@@ -153,6 +153,29 @@ body {
     color: var(--link-hover);
 }
 
+/* --- NAVIGAZIONE TOP --- */
+.top-nav {
+    margin-bottom: 40px;
+    font-family: var(--font-family--headings);
+    font-size: 1.5rem;
+    font-style: italic;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.top-nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+.top-nav a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    color: var(--link-hover);
+}
+
 /* --- STILE BLOCCHI DI CODICE MINIMALI --- */
 .post-content code {
     background: var(--code-bg);
@@ -205,6 +228,15 @@ body {
 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">[ dark ]</button>
 
 <div class="container">
+    <div class="top-nav">
+        <a href="{{ '/' | relative_url }}">home</a>
+        <a href="#">youtube</a>
+        <a href="https://github.com/SamueleAmato">github</a>
+        <a href="{{ '/contact.html' | relative_url }}">contact</a>
+        <a href="https://drive.proton.me/urls/0K7CYY9P7M#5EtkxsYKIxck">resume</a>
+        <a href="{{ '/feed.xml' | relative_url }}">rss</a>
+    </div>
+
     <div class="post-header">
         {% if page.title %}
         <div class="post-title">{{ page.title }}</div>

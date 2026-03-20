@@ -46,10 +46,9 @@ body {
     line-height: 1.55;
     transition: background 0.2s ease, color 0.2s ease;
     
-    /* Centratura perfetta dei contenuti nello schermo */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -71,74 +70,123 @@ body {
 }
 
 .content-wrapper {
-    text-align: center;
-    max-width: 620px;
+    text-align: left;
+    max-width: 900px;
     width: 100%;
-    padding: 20px;
+    padding: 60px 20px 20px 20px;
     box-sizing: border-box;
 }
 
-/* --- STILI TITOLO --- */
-.page-title {
-    color: var(--heading-color);
+/* --- NAVIGAZIONE TOP --- */
+.top-nav {
+    margin-bottom: 40px;
     font-family: var(--font-family--headings);
-    font-size: var(--font-size--xx-large);
-    font-weight: 400;
+    font-size: 1.5rem;
     font-style: italic;
-    margin: 0 0 20px 0;
-    line-height: 1.1;
+    border-bottom: 1px solid var(--border-color, #dddddd);
+    padding-bottom: 10px;
 }
 
-/* --- IMMAGINE CENTRALE --- */
-.hero-image {
-    width: 100%;
-    max-width: 560px; /* Larghezza massima dell'immagine originale */
+[data-theme="dark"] .top-nav {
+    border-bottom: 1px solid #333333;
+}
+
+.top-nav a {
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.top-nav a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+/* --- COLONNE --- */
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.left-col {
+    flex: 1 1 500px;
+}
+
+.right-col {
+    flex: 1 1 300px;
+}
+
+/* --- STILI LISTA POSTS --- */
+ul.posts-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+ul.posts-list li {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+span.post-date {
+    color: #666;
+    margin-right: 15px;
+    font-size: 0.9em;
+    min-width: 90px;
+}
+
+[data-theme="dark"] span.post-date {
+    color: #888;
+}
+
+/* --- STILI PROFILO DESTRA --- */
+.profile-img {
+    width: 180px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* --- LINK E NAVIGAZIONE --- */
+.right-col p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+}
+
+.right-col ul.about-links {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.right-col ul.about-links li {
+    margin: 5px 0;
+}
+
+/* --- LINK GENERALI --- */
 a {
     color: var(--link-color);
-    text-decoration: none; /* Tolta la sottolineatura generale per renderlo più pulito come nell'originale */
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
 }
 
 a:hover {
     color: var(--link-hover);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
 }
 
 .timezone-info {
-    margin-bottom: 30px;
+    margin-top: 60px;
     font-size: 0.9em;
-}
-
-.timezone-info a {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-}
-
-.nav-links {
-    margin-top: 20px;
-    line-height: 1.8;
-}
-
-.nav-links a {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-    margin: 0 5px;
+    text-align: center;
+    width: 100%;
 }
 </style>
 
 <script>
-// Script Orologio Originale
 const options = {
     timeZone: 'Europe/Rome',
     hour: 'numeric',
@@ -162,9 +210,37 @@ setInterval(() => {
 
 <div class="content-wrapper">
     
-    <h1 class="page-title">SAMUELE AMATO</h1>
+    <div class="top-nav">
+        <a href="{{ '/' | relative_url }}">home</a>
+        <a href="#">youtube</a>
+        <a href="https://github.com/SamueleAmato">github</a>
+        <a href="{{ '/contact.html' | relative_url }}">contact</a>
+        <a href="https://drive.proton.me/urls/0K7CYY9P7M#5EtkxsYKIxck">resume</a>
+        <a href="{{ '/feed.xml' | relative_url }}">rss</a>
+    </div>
     
-    <img src="assets/images/bg.jpg" alt="Background" class="hero-image">
+    <div class="columns">
+        <div class="left-col">
+            <ul class="posts-list">
+            {% for post in site.posts %}
+                <li>
+                    <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="right-col">
+            <img src="assets/images/pfp.png" class="profile-img" alt="Samuele Amato Profile Picture">
+            <p>I’m a 19-year-old developer who enjoys working with low-level systems. I share some of my projects on GitHub, ranging from <a href="https://github.com/SamueleAmato?tab=repositories&q=&type=&language=c&sort=">small C utilities</a> to <a href="https://github.com/search?q=owner%3ASamueleAmato+osint&type=repositories">OSINT tools</a>. Beyond programming, I like writing (<a href="https://samueleamato.xyz/blog.html">not just code!</a>) and have a strong interest in philosophy and biology, which influence how I think and create.</p>
+            <ul class="about-links">
+                <li><a href="https://samueleamato.xyz/2025/07/30/hardware-i-use">Hardware I use</a></li>
+                <li><a href="#">Software I use</a></li>
+                <li><a href="picsilike.html">pics that inspire me</a></li>
+            </ul>
+        </div>
+    </div>
     
     <div class="timezone-info">
         <i>
@@ -173,14 +249,6 @@ setInterval(() => {
             <span id="time">Loading...</span>
             <a href="https://24timezones.com/time-zone/cet" target="_blank">CET</a>
         </i>
-    </div>
-
-    <div class="nav-links">
-        <a href="https://samueleamato.xyz/about.html">about</a> //
-        <a href="https://samueleamato.xyz/blog.html">blog</a> //
-        <a href="https://drive.proton.me/urls/0K7CYY9P7M#5EtkxsYKIxck">resume</a> //
-        <a href="https://samueleamato.xyz/contact.html">contact</a> //
-        <a href="https://samueleamato.xyz/projects.html">projects</a>
     </div>
 
 </div>
