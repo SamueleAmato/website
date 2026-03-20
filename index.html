@@ -1,6 +1,5 @@
 ---
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SAMUELE AMATO</title>
 <link rel="icon" href="https://samueleamato.xyz/favicon.ico">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-
 <style>
 /* --- VARIABILI DI TEMA (CHIARO/SCURO) --- */
 :root {
@@ -21,13 +18,11 @@
     --heading-color: #222222;
     --link-color: #444444;
     --link-hover: #000000;
-    
     --font-family--headings: "Instrument Serif", serif;
     --font-family--body: "Lora", serif;
     --font-size--medium: 1.05rem;
     --font-size--xx-large: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 1.283), 4rem);
 }
-
 [data-theme="dark"] {
     --bg-color: #121212;
     --text-color: #e0e0e0;
@@ -35,7 +30,6 @@
     --link-color: #aaaaaa;
     --link-hover: #ffffff;
 }
-
 body {
     margin: 0;
     padding: 0;
@@ -48,13 +42,11 @@ body {
     font-size: var(--font-size--medium);
     line-height: 1.55;
     transition: background 0.2s ease, color 0.2s ease;
-    
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
-
 /* --- PULSANTE DARK MODE SUCKLESS --- */
 .theme-toggle {
     position: absolute;
@@ -71,7 +63,6 @@ body {
 .theme-toggle:hover {
     text-decoration: underline;
 }
-
 .content-wrapper {
     text-align: left;
     max-width: 900px;
@@ -79,7 +70,16 @@ body {
     padding: 60px 20px 20px 20px;
     box-sizing: border-box;
 }
-
+/* --- TITOLO PAGINA --- */
+.page-title {
+    font-family: var(--font-family--headings);
+    font-size: var(--font-size--xx-large);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--heading-color);
+    margin: 0 0 30px 0;
+    line-height: 1.1;
+}
 /* --- NAVIGAZIONE TOP --- */
 .top-nav {
     margin-bottom: 40px;
@@ -89,86 +89,71 @@ body {
     border-bottom: 1px solid var(--border-color, #dddddd);
     padding-bottom: 10px;
 }
-
 [data-theme="dark"] .top-nav {
     border-bottom: 1px solid #333333;
 }
-
 .top-nav a {
     margin-right: 15px;
     text-decoration: none;
 }
-
 .top-nav a:hover {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
 }
-
 /* --- COLONNE --- */
 .columns {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
 }
-
 .left-col {
     flex: 1 1 500px;
 }
-
 .right-col {
     flex: 1 1 300px;
 }
-
 /* --- STILI LISTA POSTS --- */
 ul.posts-list {
     list-style: none;
     padding-left: 0;
     margin: 0;
 }
-
 ul.posts-list li {
     margin: 15px 0;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
 }
-
 span.post-date {
     color: #666;
     margin-right: 15px;
     font-size: 0.9em;
     min-width: 90px;
 }
-
 [data-theme="dark"] span.post-date {
     color: #888;
 }
-
 /* --- STILI PROFILO DESTRA --- */
 .profile-img {
-    width: 180px;
+    width: 280px;
     height: auto;
     margin-bottom: 15px;
     display: block;
 }
-
 .right-col p {
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 0.95em;
 }
-
 .right-col ul.about-links {
     list-style: none;
     padding-left: 0;
     margin: 0;
 }
-
 .right-col ul.about-links li {
     margin: 5px 0;
 }
-
 /* --- LINK GENERALI --- */
 a {
     color: var(--link-color);
@@ -176,43 +161,17 @@ a {
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
 }
-
 a:hover {
     color: var(--link-hover);
 }
-
-.timezone-info {
-    margin-top: 60px;
-    font-size: 0.9em;
-    text-align: center;
-    width: 100%;
-}
 </style>
-
-<script>
-const options = {
-    timeZone: 'Europe/Rome',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric'
-};
-
-const formatter = new Intl.DateTimeFormat([], options);
-
-setInterval(() => {
-    const timeElement = document.getElementById("time");
-    if (timeElement) {
-        timeElement.innerText = formatter.format(new Date());
-    }
-}, 1000);
-</script>
 </head>
 <body>
-
 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">[ dark ]</button>
-
 <div class="content-wrapper">
-    
+
+    <h1 class="page-title">Samuele Amato</h1>
+
     <div class="top-nav">
         <a href="{{ '/' | relative_url }}">home</a>
         <a href="#">youtube</a>
@@ -221,7 +180,7 @@ setInterval(() => {
         <a href="https://drive.proton.me/urls/0K7CYY9P7M#5EtkxsYKIxck">resume</a>
         <a href="{{ '/feed.xml' | relative_url }}">rss</a>
     </div>
-    
+
     <div class="columns">
         <div class="left-col">
             <ul class="posts-list">
@@ -233,10 +192,10 @@ setInterval(() => {
             {% endfor %}
             </ul>
         </div>
-        
+
         <div class="right-col">
             <img src="assets/images/pfp.png" class="profile-img" alt="Samuele Amato Profile Picture">
-            <p>I’m a 19-year-old developer who enjoys working with low-level systems. I share some of my projects on GitHub, ranging from <a href="https://github.com/SamueleAmato?tab=repositories&q=&type=&language=c&sort=">small C utilities</a> to <a href="https://github.com/search?q=owner%3ASamueleAmato+osint&type=repositories">OSINT tools</a>. Beyond programming, I like writing (<a href="https://samueleamato.xyz/blog.html">not just code!</a>) and have a strong interest in philosophy and biology, which influence how I think and create.</p>
+            <p>I'm a 19-year-old developer who enjoys working with low-level systems. I share some of my projects on GitHub, ranging from <a href="https://github.com/SamueleAmato?tab=repositories&q=&type=&language=c&sort=">small C utilities</a> to <a href="https://github.com/search?q=owner%3ASamueleAmato+osint&type=repositories">OSINT tools</a>. Beyond programming, I like writing (<a href="https://samueleamato.xyz/blog.html">not just code!</a>) and have a strong interest in philosophy and biology, which influence how I think and create.</p>
             <ul class="about-links">
                 <li><a href="https://samueleamato.xyz/2025/07/30/hardware-i-use">Hardware I use</a></li>
                 <li><a href="#">Software I use</a></li>
@@ -244,25 +203,13 @@ setInterval(() => {
             </ul>
         </div>
     </div>
-    
-    <div class="timezone-info">
-        <i>
-            <a href="https://24timezones.com/current_time/italy_rome_clock.php" target="_blank">TIME IN ITALY</a>
-            —
-            <span id="time">Loading...</span>
-            <a href="https://24timezones.com/time-zone/cet" target="_blank">CET</a>
-        </i>
-    </div>
 
 </div>
-
 <script>
     const toggleBtn = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    
     document.documentElement.setAttribute('data-theme', currentTheme);
     toggleBtn.textContent = currentTheme === 'dark' ? '[ light ]' : '[ dark ]';
-
     toggleBtn.addEventListener('click', () => {
         let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', theme);
@@ -270,6 +217,5 @@ setInterval(() => {
         toggleBtn.textContent = theme === 'dark' ? '[ light ]' : '[ dark ]';
     });
 </script>
-
 </body>
 </html>
