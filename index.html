@@ -194,7 +194,7 @@ a:hover {
         </div>
 
         <div class="right-col">
-            <img src="assets/images/pfp.png" class="profile-img" alt="Samuele Amato Profile Picture">
+            <img id="profile-img" src="assets/images/light_pfp.jpg" class="profile-img" alt="Samuele Amato Profile Picture">
             <p>I'm a 19-year-old developer who enjoys working with low-level systems. I share some of my projects on GitHub, ranging from <a href="https://github.com/SamueleAmato?tab=repositories&q=&type=&language=c&sort=">small C utilities</a> to <a href="https://github.com/search?q=owner%3ASamueleAmato+osint&type=repositories">OSINT tools</a>. Beyond programming, I like writing (<a href="https://samueleamato.xyz/blog.html">not just code!</a>) and have a strong interest in philosophy and biology, which influence how I think and create.</p>
             <ul class="about-links">
                 <li><a href="https://samueleamato.xyz/2025/07/30/hardware-i-use">Hardware I use</a></li>
@@ -207,14 +207,21 @@ a:hover {
 </div>
 <script>
     const toggleBtn = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    toggleBtn.textContent = currentTheme === 'dark' ? '[ light ]' : '[ dark ]';
-    toggleBtn.addEventListener('click', () => {
-        let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    const profileImg = document.getElementById('profile-img');
+
+    function applyTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
         toggleBtn.textContent = theme === 'dark' ? '[ light ]' : '[ dark ]';
+        profileImg.src = theme === 'dark' ? 'assets/images/dark_pfp.png' : 'assets/images/light_pfp.png';
+    }
+
+    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    applyTheme(currentTheme);
+
+    toggleBtn.addEventListener('click', () => {
+        const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', theme);
+        applyTheme(theme);
     });
 </script>
 </body>
