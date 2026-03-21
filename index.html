@@ -212,7 +212,7 @@ a:hover {
     function applyTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
         toggleBtn.textContent = theme === 'dark' ? '[ light ]' : '[ dark ]';
-        profileImg.src = theme === 'dark' ? 'assets/images/dark_pfp.png' : 'assets/images/light_pfp.png';
+        profileImg.src = theme === 'dark' ? 'assets/images/dark_pfp.png' : 'assets/images/light_pfp.jpg';
     }
 
     const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
