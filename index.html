@@ -234,7 +234,7 @@ a:hover {
 
     function applyTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
-        themeBtn.textContent = theme === 'dark' ? '[ light ]' : '[ dark ]';
+        themeBtn.textContent = theme === 'dark' ? '[ dark ]' : '[ light ]';
         profileImg.src = theme === 'dark' ? 'assets/images/dark_pfp.png' : 'assets/images/light_pfp.jpg';
     }
 
@@ -256,7 +256,7 @@ a:hover {
         document.documentElement.setAttribute('lang', lang);
         
         // Cambia il testo del bottone (mostra l'opzione NON attiva)
-        langBtn.textContent = lang === 'en' ? '[ it ]' : '[ en ]';
+        langBtn.textContent = lang === 'en' ? '[ en ]' : '[ it ]';
 
         // Filtra i post nella colonna sinistra
         postItems.forEach(item => {
