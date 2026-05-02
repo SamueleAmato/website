@@ -1,8 +1,9 @@
 ---
-title: "My Experience with PSP Development"
+layout: post
+title: "Sviluppo PSP"
+lang: it
 date: 2024-02-06
 image: https://samueleamato.xyz/assets/images/pspfetch.jpeg
-bluesky_post_uri: "https://bsky.app/profile/rdwei.bsky.social/post/3lzmfk7s67c2i"
 ---
 
 The console that has stayed with me even **twenty years** later is the **PlayStation Portable**. 

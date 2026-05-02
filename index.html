@@ -47,11 +47,15 @@ body {
     justify-content: flex-start;
     align-items: center;
 }
-/* --- PULSANTE DARK MODE SUCKLESS --- */
-.theme-toggle {
+/* --- PULSANTI SUCKLESS (TEMA & LINGUA) --- */
+.toggles-wrapper {
     position: absolute;
     top: 20px;
     right: 20px;
+    display: flex;
+    gap: 15px;
+}
+.btn-toggle {
     background: none;
     border: none;
     color: var(--text-color);
@@ -60,7 +64,7 @@ body {
     cursor: pointer;
     padding: 5px;
 }
-.theme-toggle:hover {
+.btn-toggle:hover {
     text-decoration: underline;
 }
 .content-wrapper {
@@ -164,10 +168,21 @@ a {
 a:hover {
     color: var(--link-hover);
 }
+
+/* Nascondi elementi non della lingua corrente */
+[lang="it"] .lang-en,
+[lang="en"] .lang-it {
+    display: none !important;
+}
 </style>
 </head>
 <body>
-<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">[ dark ]</button>
+<!-- Contenitore bottoni -->
+<div class="toggles-wrapper">
+    <button id="lang-toggle" class="btn-toggle" aria-label="Toggle language">[ it ]</button>
+    <button id="theme-toggle" class="btn-toggle" aria-label="Toggle dark mode">[ dark ]</button>
+</div>
+
 <div class="content-wrapper">
 
     <h1 class="page-title">Samuele Amato</h1>
@@ -184,8 +199,9 @@ a:hover {
     <div class="columns">
         <div class="left-col">
             <ul class="posts-list">
+            <!-- Assegna la lingua dal front matter, se manca di default è 'en' -->
             {% for post in site.posts %}
-                <li>
+                <li class="post-item" data-lang="{{ post.lang | default: 'en' }}">
                     <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
                     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                 </li>
@@ -195,33 +211,71 @@ a:hover {
 
         <div class="right-col">
             <img id="profile-img" src="assets/images/light_pfp.jpg" class="profile-img" alt="Samuele Amato Profile Picture">
-            <p>I'm a 19-year-old developer who enjoys working with low-level systems. I share some of my projects on GitHub, ranging from <a href="https://github.com/SamueleAmato?tab=repositories&q=&type=&language=c&sort=">small C utilities</a> to <a href="https://github.com/search?q=owner%3ASamueleAmato+osint&type=repositories">OSINT tools</a>. Beyond programming, I like writing (<a href="https://samueleamato.xyz/blog.html">not just code!</a>) and have a strong interest in philosophy and biology, which influence how I think and create.</p>
+            
+            <!-- Bio in Inglese -->
+            <p class="lang-en">I'm a 19-year-old developer who enjoys working with low-level systems. I share some of my projects on GitHub, ranging from <a href="https://github.com/SamueleAmato?tab=repositories&q=&type=&language=c&sort=">small C utilities</a> to <a href="https://github.com/search?q=owner%3ASamueleAmato+osint&type=repositories">OSINT tools</a>. Beyond programming, I like writing (<a href="https://samueleamato.xyz/blog.html">not just code!</a>) and have a strong interest in philosophy and biology, which influence how I think and create.</p>
+            
+            <!-- Bio in Italiano -->
+            <p class="lang-it">Sono uno sviluppatore di 19 anni a cui piace lavorare con sistemi a basso livello. Condivido alcuni dei miei progetti su GitHub, che spaziano da <a href="https://github.com/SamueleAmato?tab=repositories&q=&type=&language=c&sort=">piccole utility in C</a> a <a href="https://github.com/search?q=owner%3ASamueleAmato+osint&type=repositories">strumenti OSINT</a>. Oltre alla programmazione, mi piace scrivere (<a href="https://samueleamato.xyz/blog.html">non solo codice!</a>) e ho un forte interesse per la filosofia e la biologia, che influenzano il mio modo di pensare e creare.</p>
+
             <ul class="about-links">
-                <li><a href="https://samueleamato.xyz/2025/07/30/hardware-i-use">Hardware I use</a></li>
-                <li><a href="#">Software I use</a></li>
-                <li><a href="picsilike.html">pics that inspire me</a></li>
+                <li><a href="https://samueleamato.xyz/2025/07/30/hardware-i-use"><span class="lang-en">Hardware I use</span><span class="lang-it">Hardware che utilizzo</span></a></li>
+                <li><a href="#"><span class="lang-en">Software I use</span><span class="lang-it">Software che utilizzo</span></a></li>
+                <li><a href="picsilike.html"><span class="lang-en">pics that inspire me</span><span class="lang-it">foto che mi ispirano</span></a></li>
             </ul>
         </div>
     </div>
 
 </div>
 <script>
-    const toggleBtn = document.getElementById('theme-toggle');
+    // --- GESTIONE TEMA ---
+    const themeBtn = document.getElementById('theme-toggle');
     const profileImg = document.getElementById('profile-img');
 
     function applyTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
-        toggleBtn.textContent = theme === 'dark' ? '[ light ]' : '[ dark ]';
+        themeBtn.textContent = theme === 'dark' ? '[ light ]' : '[ dark ]';
         profileImg.src = theme === 'dark' ? 'assets/images/dark_pfp.png' : 'assets/images/light_pfp.jpg';
     }
 
     const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     applyTheme(currentTheme);
 
-    toggleBtn.addEventListener('click', () => {
+    themeBtn.addEventListener('click', () => {
         const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         localStorage.setItem('theme', theme);
         applyTheme(theme);
+    });
+
+    // --- GESTIONE LINGUA ---
+    const langBtn = document.getElementById('lang-toggle');
+    const postItems = document.querySelectorAll('.post-item');
+
+    function applyLang(lang) {
+        // Imposta l'attributo lang sull'HTML (gestisce la colonna destra via CSS)
+        document.documentElement.setAttribute('lang', lang);
+        
+        // Cambia il testo del bottone (mostra l'opzione NON attiva)
+        langBtn.textContent = lang === 'en' ? '[ it ]' : '[ en ]';
+
+        // Filtra i post nella colonna sinistra
+        postItems.forEach(item => {
+            if (item.getAttribute('data-lang') === lang) {
+                item.style.display = 'flex'; // Ripristina il display di default della lista
+            } else {
+                item.style.display = 'none'; // Nascondi
+            }
+        });
+    }
+
+    // Default inglese o salva la scelta precedente
+    const currentLang = localStorage.getItem('lang') || 'en';
+    applyLang(currentLang);
+
+    langBtn.addEventListener('click', () => {
+        const newLang = document.documentElement.getAttribute('lang') === 'en' ? 'it' : 'en';
+        localStorage.setItem('lang', newLang);
+        applyLang(newLang);
     });
 </script>
 </body>
