@@ -1,49 +1,45 @@
 ---
 layout: post
-title: "Sviluppo PSP"
+title: "La mia esperienza con lo sviluppo per PSP"
 lang: it
 date: 2024-02-06
 image: https://samueleamato.xyz/assets/images/pspfetch.jpeg
 ---
 
-The console that has stayed with me even **twenty years** later is the **PlayStation Portable**. 
-I still love this mobile device for various reasons. PSP is small enough to fit in a pocket and can be used on the move, which makes it incredibly convenient. 
-In addition to that, it also has audio outputs and excellent multimedia features. It serves as an MP3 player, thus making it a versatile entertainment gadget. 
-In terms of hardware, the device itself is impressive because of its bright screen, long-lasting battery, and expandable storage via Memory Stick Duo cards. 
-All these features make the PSP stand out till now. 
 
-## Why?
+La console che è rimasta con me anche **vent’anni** dopo è la **PlayStation Portable**.  
+Amo ancora questo dispositivo portatile per diversi motivi. La PSP è abbastanza piccola da stare in tasca e può essere utilizzata in movimento, il che la rende incredibilmente comoda.  
+Inoltre, dispone di uscite audio e di eccellenti funzionalità multimediali. Può essere utilizzata come lettore MP3, diventando così un dispositivo di intrattenimento versatile.  
+Dal punto di vista hardware, il dispositivo è notevole grazie al suo schermo luminoso, alla batteria di lunga durata e alla memoria espandibile tramite Memory Stick Duo.  
+Tutte queste caratteristiche fanno sì che la PSP si distingua ancora oggi.
 
-Writing software for the PSP was mostly **fun**. It is not just that I have always been desirous of creating something which does not run only on a PC or 
-smartphone, infact PSP was perfect to offer me the chance. To develop for the PSP is an exclusive challenge demanding creativity and technical competence 
-and the result is more rewarding than what you get from common platforms. 
+## Perché?
 
-The prospect of understanding how PSP hardware works and optimizing code so 
-as to make it run efficiently on this device was very thrilling and educational at the same time. In addition, it enabled me understand the basics of 
-Lua programming language. Lua is easy to learn, lightweight high-level scripting language that has powerful applications especially in game development. 
-Using Lua on my PSP made me realize its simplicity and flexibility hence opened a way into future undertakings. 
+Scrivere software per PSP è stato soprattutto **divertente**. Non si trattava solo del desiderio di creare qualcosa che non girasse su PC o smartphone: la PSP era perfetta per offrirmi questa opportunità.  
+Sviluppare per PSP rappresenta una sfida unica che richiede creatività e competenza tecnica, e il risultato è più gratificante rispetto a quello che si ottiene su piattaforme più comuni.
 
-Beyond coding, however, this project sought to expand the bounds of what can be done with this classic portable system. 
+La prospettiva di comprendere il funzionamento dell’hardware della PSP e di ottimizzare il codice affinché girasse in modo efficiente su questo dispositivo è stata allo stesso tempo entusiasmante ed educativa.  
+Inoltre, mi ha permesso di comprendere le basi del linguaggio di programmazione Lua. Lua è un linguaggio di scripting ad alto livello, leggero e facile da imparare, con applicazioni molto potenti soprattutto nello sviluppo di videogiochi.  
+Usare Lua sulla mia PSP mi ha fatto apprezzare la sua semplicità e flessibilità, aprendo la strada a progetti futuri.
 
-## What I Did
+Al di là della programmazione, questo progetto mirava anche a spingere i limiti di ciò che si può fare con questo sistema portatile classico.
 
-The first project I worked on was a light MP3 player designed to ensure good battery life while supporting functions that are not normally seen in PSP, and 
-such as turning off the screen when listening to music. The outcome was a software without GUI but with TUI (Text User Interface). This is vital for power 
-saving.
+## Cosa ho fatto
 
-You can see the result [here](https://github.com/rdWei/UMusic).
+Il primo progetto su cui ho lavorato è stato un lettore MP3 leggero, progettato per garantire una buona autonomia della batteria supportando al contempo funzionalità non normalmente presenti sulla PSP,  
+come lo spegnimento dello schermo durante la riproduzione musicale. Il risultato è stato un software senza interfaccia grafica, ma con una TUI (Text User Interface). Questo è fondamentale per il risparmio energetico.
 
-### The second attempt
+Puoi vedere il risultato [qui](https://github.com/rdWei/UMusic).
 
-The Neofetch-like program was my second project created for the PSP. It displays various information including available RAM and microSD card space, as well
-as firmware details: version number plus its type on the screen. 
+### Il secondo tentativo
+
+Il mio secondo progetto è stato un programma in stile Neofetch per PSP. Mostra varie informazioni, tra cui la RAM disponibile, lo spazio della microSD e i dettagli del firmware: numero di versione e tipologia.
 
 <p align="center">
   <img src="/assets/images/pspfetch.jpeg" alt="psp neofetch" width="600" />
 </p>
 
+## Come?
 
-## How?
+Per creare questi due software ho utilizzato un interprete chiamato ONELua, che supporta PSP/PSVita/PS1/PS2/PS3. È stato piuttosto semplice, dato che Lua è un linguaggio molto intuitivo.  
 
-To create these two software, I used an interpreter called [ONELua](https://onelua.x10.mx/psp/docs/en), which supports PSP/PSVita/PS1/PS2/PS3. It was quite straightforward since Lua is a very 
-simple language. [Here](https://github.com/rdWei/UMusic) is the source code of the first project. 
