@@ -1,6 +1,7 @@
 ---
 title: "Smetti di scrivere if in Bash"
 date: 2026-02-24
+lang: it
 hn_id: td
 ---
 

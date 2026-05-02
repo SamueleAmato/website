@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ""Perché uso un dumbphone nel 2025
+title: "Perché uso un dumbphone nel 2025"
 lang: it
 date: 2025-06-04
 image: https://www.weareteachers.com/wp-content/uploads/Can-Dumb-Phones-Solve-Educations-Student-Engagement-Issues.png 
