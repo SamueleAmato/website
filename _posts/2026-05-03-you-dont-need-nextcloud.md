@@ -38,7 +38,7 @@ Some advantages:
 * direct synchronization between devices
 * automatic connection management (even without a public IP)
 
-The setup is quick and well documented in the official guide.
+The setup is quick and well documented in the [official guide](https://docs.syncthing.net/intro/getting-started.html).
 
 ## Do you still need a server?
 
@@ -74,17 +74,3 @@ Some features are missing:
 * integration with apps (calendar, notes, etc.)
 
 If you need those, Nextcloud is still a solid choice.
-
-## Conclusion
-
-If your only goal is to:
-
-* sync files across devices
-* keep an always up-to-date copy
-
-then Syncthing is a simpler and more efficient solution.
-
-If instead you want a full personal cloud and collaboration platform, Nextcloud still makes a lot of sense.
-
-It all depends on your use case.
-
