@@ -1,5 +1,5 @@
 ---
-title: "When Nextcloud Is Overkill?" 
+title: "When is Nextcloud Overkill?" 
 date: 2026-05-03
 lang: en
 ---
