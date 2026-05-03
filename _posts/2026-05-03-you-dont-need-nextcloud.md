@@ -2,7 +2,7 @@
 title: "When Nextcloud Is Overkill: A Simpler Approach to File Sync" 
 date: 2026-05-03
 lang: en
---------
+---
 
 Nextcloud is an open-source self-hosted suite that lets you build a private cloud for storage, file synchronization, and much more.
 
