@@ -174,45 +174,6 @@ a:hover {
 [lang="en"] .lang-it {
     display: none !important;
 }
-/* --- POST TITLE TRUNCATE + FADE --- */
-.post-item a {
-    display: inline-block;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    position: relative;
-    text-overflow: ellipsis;
-}
-
-/* Fade-out alla fine del testo */
-.post-item a::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60px;
-    height: 100%;
-    pointer-events: none;
-
-    /* usa il colore del background per integrarsi con il tema */
-    background: linear-gradient(
-        to right,
-        transparent,
-        var(--bg-color)
-    );
-}
-
-/* opzionale: migliora separazione tra data e titolo */
-.post-item {
-    display: flex;
-    gap: 10px;
-    align-items: baseline;
-}
-
-/* evita che la data venga compressa */
-.post-date {
-    flex-shrink: 0;
-}
 </style>
 </head>
 <body>
