@@ -1,5 +1,5 @@
 ---
-title: "When Nextcloud Is Overkill: A Simpler Approach to File Sync" 
+title: "When Nextcloud Is Overkill?" 
 date: 2026-05-03
 lang: en
 ---
