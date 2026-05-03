@@ -118,21 +118,27 @@ body {
     flex: 1 1 300px;
 }
 /* --- STILI LISTA POSTS --- */
-ul.posts-list {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-}
 ul.posts-list li {
     margin: 15px 0;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Impedisce al link di scivolare sotto la data */
     align-items: baseline;
+    overflow: hidden; /* Necessario per contenere il testo che taglia */
 }
+
+ul.posts-list li a {
+    white-space: nowrap;      /* Impedisce al testo di andare a capo */
+    overflow: hidden;         /* Nasconde il testo in eccesso */
+    text-overflow: ellipsis;  /* Aggiunge i tre puntini (...) */
+    display: block;           /* Permette l'applicazione del clipping */
+    min-width: 0;             /* Fix per flexbox per permettere il restringimento */
+}
+
 span.post-date {
     color: #666;
     margin-right: 15px;
     font-size: 0.9em;
+    flex-shrink: 0;          /* Impedisce alla data di rimpicciolirsi */
     min-width: 90px;
 }
 [data-theme="dark"] span.post-date {
