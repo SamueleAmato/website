@@ -15,14 +15,13 @@ layout: null
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
 <style>
-/* --- VARIABILI DI TEMA (CHIARO/SCURO) --- */
 :root {
     --bg-color: #f9f9f9;
     --text-color: #111111;
     --heading-color: #222222;
     --link-color: #444444;
     --link-hover: #000000;
-    
+
     --font-family--headings: "Instrument Serif", serif;
     --font-family--body: "Lora", serif;
     --font-size--medium: 1.05rem;
@@ -52,11 +51,16 @@ body {
     transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* --- PULSANTE DARK MODE SUCKLESS --- */
-.theme-toggle {
+/* BOTTONI */
+.toggles-wrapper {
     position: absolute;
     top: 20px;
     right: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-toggle {
     background: none;
     border: none;
     color: var(--text-color);
@@ -65,17 +69,17 @@ body {
     cursor: pointer;
     padding: 5px;
 }
-.theme-toggle:hover {
+
+.btn-toggle:hover {
     text-decoration: underline;
 }
 
 .container {
-    max-width: 620px; /* Stessa larghezza degli articoli */
+    max-width: 620px;
     margin: 0 auto;
     padding-top: 40px;
 }
 
-/* --- STILI TITOLO --- */
 .page-header {
     margin-bottom: 40px;
 }
@@ -85,12 +89,11 @@ body {
     font-family: var(--font-family--headings);
     font-size: var(--font-size--xx-large);
     font-weight: 400;
-    font-style: italic; /* Mantenuto il corsivo che avevi originariamente */
+    font-style: italic;
     line-height: 1.15;
     margin: 0 0 5px 0;
 }
 
-/* --- STILI LISTA E LINK --- */
 a {
     color: var(--link-color);
     text-decoration: underline;
@@ -111,7 +114,7 @@ ul.posts-list {
 ul.posts-list li {
     margin: 15px 0;
     display: flex;
-    flex-wrap: wrap; /* Per evitare che la data e il titolo si sovrappongano su schermi minuscoli */
+    flex-wrap: wrap;
     align-items: baseline;
 }
 
@@ -119,7 +122,7 @@ span.post-date {
     color: #666;
     margin-right: 15px;
     font-size: 0.9em;
-    min-width: 90px; /* Tiene allineati i titoli degli articoli se le date hanno la stessa larghezza */
+    min-width: 90px;
 }
 
 [data-theme="dark"] span.post-date {
@@ -130,16 +133,29 @@ span.post-date {
     font-size: 0.9em;
     margin-top: 20px;
 }
+
+/* Lingue */
+[lang="it"] .lang-en,
+[lang="en"] .lang-it {
+    display: none !important;
+}
 </style>
 </head>
 <body>
 
-<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">[ dark ]</button>
+<div class="toggles-wrapper">
+    <button id="lang-toggle" class="btn-toggle">[ it ]</button>
+    <button id="theme-toggle" class="btn-toggle">[ dark ]</button>
+</div>
 
 <div class="container">
 
     <div class="page-header">
-        <h1 class="page-title">BLOG INDEX</h1>
+        <h1 class="page-title">
+            <span class="lang-en">BLOG INDEX</span>
+            <span class="lang-it">INDICE BLOG</span>
+        </h1>
+
         <div class="rss-link">
             <small><a href="{{ '/feed.xml' | relative_url }}"><i>rss</i></a></small>
         </div>
@@ -147,32 +163,78 @@ span.post-date {
 
     <ul class="posts-list">
     {% for post in site.posts %}
-        <li>
+        <li class="post-item" data-lang="{{ post.lang | default: 'en' }}">
             <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
         </li>
     {% endfor %}
     </ul>
-    
+
     <div class="back-link">
-        <a href="{{ '/' | relative_url }}">← back to homepage</a>
+        <a href="{{ '/' | relative_url }}">
+            <span class="lang-en">← back to homepage</span>
+            <span class="lang-it">← torna alla homepage</span>
+        </a>
     </div>
 
 </div>
 
 <script>
-    const toggleBtn = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    toggleBtn.textContent = currentTheme === 'dark' ? '[ light ]' : '[ dark ]';
+/* THEME */
+const themeBtn = document.getElementById('theme-toggle');
 
-    toggleBtn.addEventListener('click', () => {
-        let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-        toggleBtn.textContent = theme === 'dark' ? '[ light ]' : '[ dark ]';
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    themeBtn.textContent = theme === 'dark' ? '[ dark ]' : '[ light ]';
+}
+
+const currentTheme =
+    localStorage.getItem('theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+applyTheme(currentTheme);
+
+themeBtn.addEventListener('click', () => {
+    const theme =
+        document.documentElement.getAttribute('data-theme') === 'dark'
+            ? 'light'
+            : 'dark';
+
+    localStorage.setItem('theme', theme);
+    applyTheme(theme);
+});
+
+/* LANGUAGE */
+const langBtn = document.getElementById('lang-toggle');
+const postItems = document.querySelectorAll('.post-item');
+
+function applyLang(lang) {
+    document.documentElement.setAttribute('lang', lang);
+
+    langBtn.textContent = lang === 'en' ? '[ en ]' : '[ it ]';
+
+    postItems.forEach(item => {
+        if (item.getAttribute('data-lang') === lang) {
+            item.style.display = 'flex';
+        } else {
+            item.style.display = 'none';
+        }
     });
+}
+
+const currentLang = localStorage.getItem('lang') || 'en';
+applyLang(currentLang);
+
+langBtn.addEventListener('click', () => {
+    const newLang =
+        document.documentElement.getAttribute('lang') === 'en'
+            ? 'it'
+            : 'en';
+
+    localStorage.setItem('lang', newLang);
+    applyLang(newLang);
+});
 </script>
+
 </body>
 </html>
