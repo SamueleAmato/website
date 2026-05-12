@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoRa Tactical Network | Samuele Amato</title>
+<meta name="author" content="Samuele Amato">
+<meta name="description" content="Infrastruttura hardware e software per comunicazioni tattiche off-grid (p2p).">
+<meta property="og:image" content="image.jpeg" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+<style>
+/* --- VARIABILI DI TEMA (CHIARO/SCURO) --- */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #111111;
+    --heading-color: #222222;
+    --link-color: #444444;
+    --link-hover: #000000;
+    --code-bg: #e8e8e8;
+    --code-text: #222222;
+    --border-color: #dddddd;
+    
+    --font-family--headings: "Instrument Serif", serif;
+    --font-family--body: "Lora", serif;
+    --font-size--medium: 1.05rem;
+    --font-size--xx-large: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 1.283), 3.27rem);
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --link-color: #aaaaaa;
+    --link-hover: #ffffff;
+    --code-bg: #1e1e1e;
+    --code-text: #cccccc;
+    --border-color: #333333;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family--body);
+    font-size: var(--font-size--medium);
+    line-height: 1.55;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* --- PULSANTE DARK MODE SUCKLESS --- */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-family: monospace;
+    font-size: 0.9em;
+    cursor: pointer;
+    padding: 5px;
+}
+.theme-toggle:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 620px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.post-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.post-title {
+    color: var(--heading-color);
+    font-family: var(--font-family--headings);
+    font-size: var(--font-size--xx-large);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.15;
+    margin: 0 0 10px 0;
+    word-break: break-word;
+}
+
+.post-date {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    font-family: var(--font-family--body);
+}
+
+[data-theme="dark"] .post-date { color: #888; }
+
+.post-image {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.post-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.post-content {
+    text-align: left;
+}
+
+.post-content p {
+    margin: 1em 0;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    color: var(--heading-color);
+    font-family: var(--font-family--headings);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.post-content a, .back-link a {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+.post-content a:hover, .back-link a:hover {
+    color: var(--link-hover);
+}
+
+/* --- NAVIGAZIONE TOP --- */
+.top-nav {
+    margin-bottom: 40px;
+    font-family: var(--font-family--headings);
+    font-size: 1.5rem;
+    font-style: italic;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.top-nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+.top-nav a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    color: var(--link-hover);
+}
+
+/* --- STILE BLOCCHI DI CODICE MINIMALI --- */
+.post-content code {
+    background: var(--code-bg);
+    color: var(--code-text);
+    padding: 2px 5px;
+    font-family: monospace;
+    font-size: 0.9em;
+    border-radius: 0;
+}
+
+.post-content pre {
+    background: var(--code-bg);
+    padding: 15px;
+    overflow-x: auto;
+    border-radius: 0;
+    border: 1px solid var(--border-color);
+}
+
+.post-content pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    border: none;
+}
+
+.back-link {
+    text-align: center;
+    margin: 40px 0 20px 0;
+    font-size: 0.9em;
+}
+</style>
+</head>
+<body>
+
+<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">[ dark ]</button>
+
+<div class="container">
+    <div class="top-nav">
+        <a href="/">home</a>
+        <a href="https://www.youtube.com/@rdweii" target="_blank">youtube</a>
+        <a href="https://github.com/SamueleAmato" target="_blank">github</a>
+        <a href="/contact.html">contact</a>
+        <a href="https://drive.proton.me/urls/0K7CYY9P7M#5EtkxsYKIxck" target="_blank">resume</a>
+    </div>
+
+    <div class="post-header">
+        <div class="post-title">RDW-Mesh: Infrastruttura Tattica Decentralizzata</div>
+        <div class="post-date">Project Preview</div>
+    </div>
+
+    <!-- Immagine inserita qui come richiesto -->
+    <div class="post-image">
+        <img src="image.jpeg" alt="LILYGO LoRa32 ESP32 Boards">
+    </div>
+
+    <!-- INIZIO CONTENUTO DEL POST -->
+    <div class="post-content">
+        <p>Il progetto <strong>RDW-Mesh</strong> è un'infrastruttura hardware e software progettata per le comunicazioni tattiche off-grid. Sfruttando i microcontrollori ESP32 e il protocollo radio LoRa (Low Power, Long Range), ho creato una rete Mesh decentralizzata e resiliente, priva di un <em>single point of failure</em>.</p>
+        
+        <p>A differenza dei sistemi tradizionali, questa rete non dipende da server centrali o connessioni internet. Ogni nodo si comporta simultaneamente da client e da router: i dati "saltano" di dispositivo in dispositivo formando una ragnatela auto-riparante. Il tutto è monitorabile tramite una dashboard web custom che gestisce allarmi e messaggistica.</p>
+
+        <h2>Cybersecurity Fisica: Il protocollo Anti-Tamper</h2>
+        <p>Uno dei limiti dei sensori distribuiti sul campo è la possibilità di compromissione fisica. Per risolvere questo problema, ho implementato un protocollo <em>anti-tamper</em> (Dead Man's Switch). Se un nodo viene aperto o rimosso violentemente, un interrupt hardware azzera istantaneamente le chiavi AES dalla memoria flash e disattiva il dispositivo.</p>
+
+        <pre><code>#include &lt;Preferences.h&gt;
+
+Preferences preferences;
+const int TAMPER_PIN = 4; // Pin collegato al sensore di apertura case
+
+// Interrupt Service Routine (ISR) ad altissima priorità
+void IRAM_ATTR tamperAlert() {
+    // 1. Notifica immediatamente la rete Mesh
+    sendEmergencyPacket("CRITICAL: NODE_COMPROMISED");
+
+    // 2. Azzeramento crittografico (Zeroing)
+    preferences.begin("crypto", false);
+    preferences.putString("aes_key", "00000000000000000000000000000000");
+    preferences.end();
+
+    // 3. Brick logico del dispositivo
+    while(true) {
+        // Il microcontrollore è bloccato e non trasmetterà più
+    }
+}
+
+void setup() {
+    pinMode(TAMPER_PIN, INPUT_PULLUP);
+    
+    // Associa l'evento fisico all'esecuzione immediata dell'ISR
+    attachInterrupt(digitalPinToInterrupt(TAMPER_PIN), tamperAlert, FALLING);
+}
+
+void loop() {
+    // ... Logica di routing e ricezione dei pacchetti LoRa ...
+}</code></pre>
+
+        <p>L'intera architettura è stata sviluppata con l'obiettivo di renderla <strong>100% Open Source</strong>, per permettere a chiunque di studiarla e implementare reti private a bassissimo costo in scenari critici o di emergenza.</p>
+    </div>
+    <!-- FINE CONTENUTO DEL POST -->
+
+    <div class="back-link">
+        <a href="/blog.html">← back</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="/">home</a>
+    </div>
+
+</div>
+
+<script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    toggleBtn.textContent = currentTheme === 'dark' ? '[ light ]' : '[ dark ]';
+
+    toggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        toggleBtn.textContent = theme === 'dark' ? '[ light ]' : '[ dark ]';
+    });
+</script>
+</body>
+</html>
