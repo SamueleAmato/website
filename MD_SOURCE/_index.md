@@ -1,4 +1,9 @@
 @header
+<head>
+    <title>Samuele Amato / Web-Page</title>
+    <link rel="icon" href="_assets/images/favicon.png" type="image/x-icon">
+</head>
+
 <div style="text-align: center;" markdown="1">
 # Samuele Amato's Web-Page
 </div>
