@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>Blog Feed</title>
+  <link>https://iltuosito.com/blog/</link>
+  <description>Gli ultimi articoli del mio blog</description>
+  <item>
+    <title>Stop Writing If In Bash</title>
+    <link>https://iltuosito.com/blog/stop_writing_if_in_bash.html</link>
+    <pubDate>Tue, 11 Aug 2026 23:34:38 -0000</pubDate>
+  </item>
+  <item>
+    <title>Why I Use A Dumbphone</title>
+    <link>https://iltuosito.com/blog/why_i_use_a_dumbphone.html</link>
+    <pubDate>Tue, 11 Aug 2026 23:34:38 -0000</pubDate>
+  </item>
+  <item>
+    <title>My Expirience With Psp Development</title>
+    <link>https://iltuosito.com/blog/my_expirience_with_PSP_development.html</link>
+    <pubDate>Tue, 11 Aug 2026 23:34:38 -0000</pubDate>
+  </item>
+  <item>
+    <title>Reading Has Nothing To Do With Paper</title>
+    <link>https://iltuosito.com/blog/reading_has_nothing_to_do_with_paper.html</link>
+    <pubDate>Tue, 11 Aug 2026 23:34:38 -0000</pubDate>
+  </item>
+  <item>
+    <title>When Nextcloud Is Overkill</title>
+    <link>https://iltuosito.com/blog/when_nextcloud_is_overkill.html</link>
+    <pubDate>Tue, 11 Aug 2026 23:34:38 -0000</pubDate>
+  </item>
+</channel>
+</rss>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Stop Writing If In Bash</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>Stop Writing if in Bash</h1>
+<p>Don’t act as though Bash is Python, or C. The most frequent trouble
+with shell scripts is using too many <code>if</code> statements for simple control.
+Although you’ll need conditional logic at times, Bash has its own,
+better way – right in the command line – of doing this: exit codes and
+logical operators.</p>
+<h2>The Basics</h2>
+<p>Each command in Bash gives back an exit code when it’s done. <code>0</code> means
+it worked, and anything else means it didn’t. You can link command
+running by using these codes with logical operators, and so get rid of
+long <code>if</code> blocks.</p>
+<ul>
+<li>
+<p><code>;</code> (Semicolon): Runs the second command no matter what the first
+    command did. It is the same as a new line.</p>
+</li>
+<li>
+<p><code>&amp;&amp;</code> (AND): Runs the second command only if the first command worked
+    (exit code <code>0</code>).</p>
+</li>
+<li>
+<p><code>||</code> (OR): Runs the second command only if the first command failed
+    (non-zero exit code).</p>
+</li>
+</ul>
+<h2>Making Conditional Assignments Better</h2>
+<p>It’s usual to see if a variable has been set, and if not, give it a
+default.</p>
+<h3>The Long Way:</h3>
+<pre><code class="language-bash">if [ -z &quot;$EDITOR&quot; ]; then
+    EDITOR=&quot;vim&quot;
+fi
+</code></pre>
+<h3>The Bash Way:</h3>
+<pre><code class="language-bash">[ -z &quot;$EDITOR&quot; ] &amp;&amp; EDITOR=&quot;vim&quot;
+</code></pre>
+<p>In this, <code>[ -z "$EDITOR" ]</code> is a command that returns true (<code>0</code>) if the
+variable is empty. The <code>&amp;&amp;</code> operator makes sure the assignment happens
+only when that’s the case. This turns three lines of standard code into
+one line that’s easy to read.</p>
+<h2>Linking Command Flow</h2>
+<p>This works for involved workflows with several things that have to be
+done. Rather than putting <code>if</code> statements inside each other to see if
+each step worked, use running chains.</p>
+<h3>The Nested Problem:</h3>
+<pre><code class="language-bash">func1
+if [ $? -eq 0 ]; then
+    func2
+    if [ $? -eq 0 ]; then
+        func3
+    else
+        handle_error
+    fi
+fi
+</code></pre>
+<h3>The Logical Chain:</h3>
+<pre><code class="language-bash">func1 &amp;&amp; func2 &amp;&amp; func3 || handle_error
+</code></pre>
+<p>In this structure, execution flows linearly. If <code>func1</code> succeeds,
+<code>func2</code> runs. If <code>func2</code> succeeds, <code>func3</code> runs. If any command in the
+<code>&amp;&amp;</code> sequence fails, the chain breaks immediately, skipping the
+remaining <code>&amp;&amp;</code> steps and triggering the <code>||</code> block to handle the failure
+(e.g., cleanup or error logging).</p>
+<h2>Conclusion</h2>
+<p>Script elegance lies in leveraging the shell's native behavior. </p>
+<p>Use <code>if</code> when it genuinely improves clarity.</p>
+<p>For everything else, logic chains are often the cleaner, more idiomatic
+choice.</p>
+<hr />
+<div style="text-align: center">
+<a href="/">Home</a>
+</div>
+</body>
+</html>

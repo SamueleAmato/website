@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>When Nextcloud Is Overkill</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<h1>When Nextcloud Overkill</h1>
+<p>Nextcloud is an open-source self-hosted suite that lets you build a private cloud for storage, file synchronization, and much more.</p>
+<p>For years, I used it on my home server mainly for two reasons:</p>
+<ul>
+<li>Synchronizing files across all my devices, keeping a directory always up to date.</li>
+<li>Having a centralized copy of my files on the server, useful as a backup in case something goes wrong with my local machines.</li>
+</ul>
+<p>In practice, the server always held the most up-to-date version of the files and distributed them to other devices.</p>
+<h2>The problem</h2>
+<p>Over time, I realized that for this specific use case, Nextcloud is <strong>overkill</strong>.</p>
+<p>Beyond file synchronization, it includes many additional features (calendar, notes, sharing, web UI, etc.) that I don’t actually use. This results in:</p>
+<ul>
+<li>more complexity</li>
+<li>higher resource usage</li>
+<li>more maintenance</li>
+</ul>
+<h2>The solution</h2>
+<p>While looking for a simpler alternative, I came across Syncthing.</p>
+<p>Syncthing is an open-source tool that synchronizes files in a <strong>peer-to-peer</strong> way, without requiring a central server or third-party services.</p>
+<p>Each device communicates directly with the others and keeps files in sync automatically.</p>
+<p>Some advantages:</p>
+<ul>
+<li>simple setup</li>
+<li>no dependency on external cloud services</li>
+<li>direct synchronization between devices</li>
+<li>automatic connection management (even without a public IP)</li>
+</ul>
+<p>The setup is quick and well documented in the <a href="https://docs.syncthing.net/intro/getting-started.html">official guide</a>.</p>
+<h2>Do you still need a server?</h2>
+<p>Yes—if you want to replicate exactly the same behavior you had with Nextcloud.</p>
+<p>Syncthing is P2P, which means files are only synchronized between devices that are online at the same time.</p>
+<p>Example:</p>
+<ul>
+<li>You modify a file on PC 1</li>
+<li>PC 2 is turned off</li>
+<li>If you shut down PC 1 before PC 2 turns on, the change won’t be transferred</li>
+</ul>
+<p>To solve this, you can use a third device that is <strong>always on</strong> (for example, a server):</p>
+<ul>
+<li>it receives all changes</li>
+<li>stores them</li>
+<li>distributes them when other devices connect</li>
+</ul>
+<p>This way you get:</p>
+<ul>
+<li>continuous synchronization</li>
+<li>a centralized copy of your files</li>
+</ul>
+<h2>Syncthing limitations</h2>
+<p>Syncthing is not a full replacement for Nextcloud.</p>
+<p>Some features are missing:</p>
+<ul>
+<li>advanced web interface for file management</li>
+<li>public link sharing</li>
+<li>integration with apps (calendar, notes, etc.)</li>
+</ul>
+<p>If you need those, Nextcloud is still a solid choice.</p>
+<hr />
+<div style="text-align: center">
+<a href="/">Home</a>
+</div>
+</body>
+</html>
