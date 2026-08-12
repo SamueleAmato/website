@@ -2,4 +2,4 @@
 
 @footer
 ---
-<a href="/Blog">Blog</a>
+<a href="/blog">Blog</a>

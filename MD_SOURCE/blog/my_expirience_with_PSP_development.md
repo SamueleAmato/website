@@ -46,4 +46,4 @@ simple language. [Here](https://github.com/rdWei/UMusic) is the source code of t
 
 ---
 
-<a href="/Blog">Blog</a>
+<a href="/blog">Blog</a>

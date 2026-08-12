@@ -75,4 +75,4 @@ If you need those, Nextcloud is still a solid choice.
 
 ---
 
-<a href="/Blog">Blog</a>
+<a href="/blog">Blog</a>

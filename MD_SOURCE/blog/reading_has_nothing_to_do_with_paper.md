@@ -25,4 +25,4 @@ Preferring paper is fine, it’s not wrong to enjoy the tactile experience of a 
 
 ---
 
-<a href="/Blog">Blog</a>
+<a href="/blog">Blog</a>

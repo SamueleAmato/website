@@ -60,4 +60,4 @@ There are many other benefits I didn’t go into, like improved sleep quality (b
 
 ---
 
-<a href="/Blog">Blog</a>
+<a href="/blog">Blog</a>
