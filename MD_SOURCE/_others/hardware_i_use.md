@@ -15,7 +15,6 @@
 - Computers
     - laptop 1: Lenovo Ideapad Chromebook 15 (alpine linux)  
     - laptop 2: Samsung Galaxy Chromebook (arch linux) 
-    - ~~laptop 3: ThinkPad X220 (arch linux)~~ > [selling here for 160$](https://www.ebay.it/itm/236431703086)  
     - desktop 1: i7 10700 gtx 1660s 32gb ram (arch linux)
 
 
