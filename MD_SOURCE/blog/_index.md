@@ -4,4 +4,4 @@
 
 ---
 
-<a href="/">Home</a>
+[Home](/) | [RSS](rss.xml)
