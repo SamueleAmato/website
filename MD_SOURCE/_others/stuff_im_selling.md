@@ -9,5 +9,4 @@ Tying my real name to these sales ensures accountability and gives you total pea
 
 @footer
 ---
-[Home](./)
-
+[Home](/)

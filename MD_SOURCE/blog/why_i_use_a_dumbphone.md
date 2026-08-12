@@ -61,5 +61,5 @@ There are many other benefits I didn’t go into, like improved sleep quality (b
 ---
 
 <div style="text-align: center">
-<a href="/">Home</a>
+<a href="/Blog">Blog</a>
 </div>

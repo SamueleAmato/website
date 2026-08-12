@@ -3,5 +3,5 @@
 @footer
 ---
 <div style="text-align: center">
-[Blog](./Blog)
+[Blog](/Blog)
 </div>

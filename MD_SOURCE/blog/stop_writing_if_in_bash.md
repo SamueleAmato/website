@@ -92,5 +92,5 @@ choice.
 ---
 
 <div style="text-align: center">
-<a href="/">Home</a>
+<a href="/Blog">Blog</a>
 </div>

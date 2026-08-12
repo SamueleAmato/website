@@ -2,4 +2,4 @@ work in progress
 
 @footer
 ---
-[Home](./)
+[Home](/)

@@ -26,5 +26,5 @@ Preferring paper is fine, it’s not wrong to enjoy the tactile experience of a 
 ---
 
 <div style="text-align: center">
-<a href="/">Home</a>
+<a href="/Blog">Blog</a>
 </div>

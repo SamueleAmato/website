@@ -14,4 +14,4 @@ _Photos I find inspiring, taken by myself and/or found on the internet._
 
 @footer
 ---
-[Home](./)
+[Home](/)

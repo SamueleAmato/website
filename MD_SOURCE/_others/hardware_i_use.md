@@ -20,4 +20,4 @@
 
 @footer
 ---
-[Home](./)
+[Home](/)
