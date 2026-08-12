@@ -75,6 +75,4 @@ If you need those, Nextcloud is still a solid choice.
 
 ---
 
-<div style="text-align: center">
 <a href="/Blog">Blog</a>
-</div>

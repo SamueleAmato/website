@@ -46,6 +46,4 @@ simple language. [Here](https://github.com/rdWei/UMusic) is the source code of t
 
 ---
 
-<div style="text-align: center">
 <a href="/Blog">Blog</a>
-</div>
