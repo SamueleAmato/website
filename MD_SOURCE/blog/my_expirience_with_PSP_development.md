@@ -25,7 +25,7 @@ The first project I worked on was a light MP3 player designed to ensure good bat
 such as turning off the screen when listening to music. The outcome was a software without GUI but with TUI (Text User Interface). This is vital for power 
 saving.
 
-You can see the result [here](https://github.com/rdWei/UMusic).
+You can see the result [here](https://github.com/samueleamato/UMusic).
 
 ### The second attempt
 
@@ -33,7 +33,7 @@ The Neofetch-like program was my second project created for the PSP. It displays
 as firmware details: version number plus its type on the screen. 
 
 <p align="center">
-  <img src="../assets/images/pspfetch.jpeg" alt="psp neofetch" width="600" />
+  <img src="/_assets/images/pspfetch.jpeg" alt="psp neofetch" width="600" />
 </p>
 
 

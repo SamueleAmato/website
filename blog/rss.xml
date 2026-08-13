@@ -5,6 +5,11 @@
   <link>https://iltuosito.com/blog/</link>
   <description>Gli ultimi articoli del mio blog</description>
   <item>
+    <title>My Expirience With PSP Development</title>
+    <link>https://iltuosito.com/blog/my_expirience_with_PSP_development.html</link>
+    <pubDate>Thu, 13 Aug 2026 15:54:45 -0000</pubDate>
+  </item>
+  <item>
     <title>Reading has nothing to do with paper</title>
     <link>https://iltuosito.com/blog/reading_has_nothing_to_do_with_paper.html</link>
     <pubDate>Wed, 12 Aug 2026 00:14:14 -0000</pubDate>
@@ -23,11 +28,6 @@
     <title>Stop Writing if in Bash</title>
     <link>https://iltuosito.com/blog/stop_writing_if_in_bash.html</link>
     <pubDate>Wed, 12 Aug 2026 00:11:58 -0000</pubDate>
-  </item>
-  <item>
-    <title>My Expirience With PSP Development</title>
-    <link>https://iltuosito.com/blog/my_expirience_with_PSP_development.html</link>
-    <pubDate>Wed, 12 Aug 2026 00:11:44 -0000</pubDate>
   </item>
 </channel>
 </rss>
