@@ -2,31 +2,31 @@
 <rss version="2.0">
 <channel>
   <title>Blog Feed</title>
-  <link>https://iltuosito.com/blog/</link>
+  <link>https://samueleamato.xyz/blog/</link>
   <description>Gli ultimi articoli del mio blog</description>
   <item>
     <title>My Expirience With PSP Development</title>
-    <link>https://iltuosito.com/blog/my_expirience_with_PSP_development.html</link>
+    <link>https://samueleamato.xyz/blog/my_expirience_with_PSP_development.html</link>
     <pubDate>Thu, 13 Aug 2026 15:54:45 -0000</pubDate>
   </item>
   <item>
     <title>Reading has nothing to do with paper</title>
-    <link>https://iltuosito.com/blog/reading_has_nothing_to_do_with_paper.html</link>
+    <link>https://samueleamato.xyz/blog/reading_has_nothing_to_do_with_paper.html</link>
     <pubDate>Wed, 12 Aug 2026 00:14:14 -0000</pubDate>
   </item>
   <item>
     <title>Why I Use a Dumbphone</title>
-    <link>https://iltuosito.com/blog/why_i_use_a_dumbphone.html</link>
+    <link>https://samueleamato.xyz/blog/why_i_use_a_dumbphone.html</link>
     <pubDate>Wed, 12 Aug 2026 00:12:13 -0000</pubDate>
   </item>
   <item>
     <title>When Nextcloud Overkill</title>
-    <link>https://iltuosito.com/blog/when_nextcloud_is_overkill.html</link>
+    <link>https://samueleamato.xyz/blog/when_nextcloud_is_overkill.html</link>
     <pubDate>Wed, 12 Aug 2026 00:12:07 -0000</pubDate>
   </item>
   <item>
     <title>Stop Writing if in Bash</title>
-    <link>https://iltuosito.com/blog/stop_writing_if_in_bash.html</link>
+    <link>https://samueleamato.xyz/blog/stop_writing_if_in_bash.html</link>
     <pubDate>Wed, 12 Aug 2026 00:11:58 -0000</pubDate>
   </item>
 </channel>
