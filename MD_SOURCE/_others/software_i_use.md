@@ -22,6 +22,7 @@ I prefer software that gets out of the way. My setup focuses on minimalism, spee
 ## Internet & Communications
 
 * **Web Browser:** [Ungoogled Chromium](https://github.com/ungoogled-software/ungoogled-chromium). 
+* **RSS Reader:** [newsboat](https://newsboat.org/). A terminal-based RSS feed reader. Fast, distraction-free, and keeps me away from the modern web.
 * **Chat:** [Signal](https://signal.org/it/) is my primary choice. I also use XMPP, and standard email when absolutely necessary.
 * **File Synchronization:** [Syncthing](https://syncthing.net/). Decentralized, peer-to-peer file sync. Keeps my devices updated without relying on someone else's cloud.
 * **Torrent Client:** [qBittorrent](https://www.qbittorrent.org/).
