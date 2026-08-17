@@ -9,6 +9,8 @@ I prefer software that gets out of the way. My setup focuses on minimalism, spee
 * **Terminal Emulator:** [Alacritty](https://github.com/alacritty/alacritty). 
 * **Shell:** bash.
 * **Launcher:** [dmenu](https://tools.suckless.org/dmenu/). A ridiculously powerful, yet entirely minimalist launcher by suckless.org.
+* **File Manager:** [ranger](https://github.com/ranger/ranger). A terminal file manager with vi keybindings. Fast, efficient, and keeps my hands on the keyboard.
+* **Password Manager:** [KeePassXC](https://keepassxc.org/). Offline, local, and heavily encrypted password management. No relying on third-party cloud servers.
 
 ## Text Editing & Productivity
 
@@ -30,6 +32,7 @@ I prefer software that gets out of the way. My setup focuses on minimalism, spee
 ## Media & Graphics
 
 * **Video / Audio Player:** mpv. Don't bother with anything else.
+* **Music Player:** [mpd](https://www.musicpd.org/) (Music Player Daemon) running as a background service. Since I'm currently exploring Emacs, I am using it as my frontend to manage and play my local music library.
 * **Image Viewer:** [sxiv](https://github.com/xyb3rt/sxiv). Simple X Image Viewer. Handles everything I need with vim-like controls.
 * **Image Editor:** GIMP for heavier editing and modifications.
 * **Wallpaper Manager:** [feh](https://feh.finalrewind.org/).
