@@ -63,3 +63,12 @@ img.normale {
     border-radius: 0;
     border: none;
 }
+
+        /* Nasconde la scrollbar mantenendo lo scroll attivo */
+        html, body {
+            -ms-overflow-style: none;  /* IE e Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        html::-webkit-scrollbar, body::-webkit-scrollbar {
+            display: none; /* Chrome, Safari e Opera */
+        }
