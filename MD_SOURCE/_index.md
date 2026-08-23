@@ -8,7 +8,7 @@
 
 ---
 
-- Cool stuff:
+- Cool Stuff
     - [Hardware I Use](_others/hardware_i_use.md)
     - [Software I Use](_others/software_i_use.md)
     - [Pics That Inspire Me](_others/pics_that_inspire_me.md)
