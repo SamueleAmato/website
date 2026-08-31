@@ -5,7 +5,6 @@
 
 
 @footer
-
 - Projects/
     - [sosec](_others/projects/sosec.html)
 
