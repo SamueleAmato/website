@@ -1,1 +1,307 @@
-<h1>This page is Work In Progress!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sosec - UNIX Terminal</title>
+    <style>
+        /* RESET & BASIC SETUP */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #005555; /* Classic X11 Solid Teal Background */
+            font-family: "Courier New", Courier, monospace;
+            color: #000;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* CRT SCANLINE EFFECT */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+            background-size: 100% 4px;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        /* MOTIF GUI WINDOW */
+        .window {
+            width: 850px;
+            max-width: 95%;
+            height: 85vh;
+            background-color: #c0c0c0;
+            /* Classic 3D inset/outset borders */
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-bottom: 2px solid #555555;
+            border-right: 2px solid #555555;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 10;
+            
+            /* Snappy, non-smooth open animation */
+            animation: openWindow 0.3s steps(3, end) forwards;
+        }
+
+        @keyframes openWindow {
+            0% { transform: scale(0.9); opacity: 0; }
+            50% { transform: scale(0.95); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* TITLE BAR */
+        .title-bar {
+            background-color: #000080;
+            color: #ffffff;
+            padding: 4px 8px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #555555;
+        }
+
+        .title-bar .controls {
+            display: flex;
+            gap: 4px;
+        }
+
+        .title-bar .btn {
+            width: 16px;
+            height: 16px;
+            background-color: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-bottom: 2px solid #555555;
+            border-right: 2px solid #555555;
+            cursor: pointer;
+        }
+
+        .title-bar .btn:active {
+            border-top: 2px solid #555555;
+            border-left: 2px solid #555555;
+            border-bottom: 2px solid #ffffff;
+            border-right: 2px solid #ffffff;
+        }
+
+        /* MENU BAR */
+        .menu-bar {
+            padding: 4px 8px;
+            border-bottom: 2px solid #ffffff;
+            background-color: #c0c0c0;
+            display: flex;
+            gap: 15px;
+        }
+
+        .menu-item {
+            cursor: pointer;
+        }
+
+        .menu-item::first-letter {
+            text-decoration: underline;
+        }
+
+        /* MAIN CONTENT AREA */
+        .content-wrapper {
+            flex-grow: 1;
+            padding: 10px;
+            background-color: #c0c0c0;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .document-area {
+            background-color: #ffffff;
+            flex-grow: 1;
+            border-top: 2px solid #555555;
+            border-left: 2px solid #555555;
+            border-bottom: 2px solid #ffffff;
+            border-right: 2px solid #ffffff;
+            padding: 20px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        /* CUSTOM WEBKIT SCROLLBAR (Motif style) */
+        .document-area::-webkit-scrollbar { width: 16px; }
+        .document-area::-webkit-scrollbar-track {
+            background: #e0e0e0;
+            border-left: 2px solid #555;
+        }
+        .document-area::-webkit-scrollbar-thumb {
+            background: #c0c0c0;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #555;
+            border-right: 2px solid #555;
+        }
+
+        /* TYPOGRAPHY & ELEMENTS */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            border-bottom: 1px dashed #000;
+            display: inline-block;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            background: #000;
+            color: #fff;
+            display: inline-block;
+            padding: 2px 5px;
+        }
+
+        p { margin-bottom: 15px; line-height: 1.4; }
+
+        a {
+            color: #0000ee;
+            text-decoration: none;
+            border-bottom: 1px solid #0000ee;
+        }
+
+        a:hover { background-color: #0000ee; color: #fff; }
+
+        ul, ol { margin-left: 20px; margin-bottom: 15px; }
+        li { margin-bottom: 5px; }
+
+        /* WARNING BOX */
+        .warning-box {
+            border: 2px dashed #ff0000;
+            padding: 10px;
+            margin: 15px 0;
+            background-color: #fff;
+            font-weight: bold;
+        }
+        
+        .warning-box::before {
+            content: "[ ! ] WARNING: ";
+            color: #ff0000;
+        }
+
+        /* TERMINAL / CODE BLOCKS */
+        .terminal {
+            background-color: #000000;
+            color: #00ff00;
+            padding: 15px;
+            border-top: 2px solid #555555;
+            border-left: 2px solid #555555;
+            border-bottom: 2px solid #ffffff;
+            border-right: 2px solid #ffffff;
+            margin-bottom: 15px;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        code { font-family: inherit; }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background-color: #00ff00;
+            vertical-align: text-bottom;
+            animation: blink 1s steps(2, start) infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { visibility: visible; }
+            50% { visibility: hidden; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="scanlines"></div>
+
+    <div class="window">
+        <div class="title-bar">
+            <span>xterm - socsec_readme.txt</span>
+            <div class="controls">
+                <div class="btn"></div>
+                <div class="btn"></div>
+            </div>
+        </div>
+        <div class="menu-bar">
+            <span class="menu-item">File</span>
+            <span class="menu-item">Edit</span>
+            <span class="menu-item">View</span>
+            <span class="menu-item">Help</span>
+        </div>
+        
+        <div class="content-wrapper">
+            <div class="document-area">
+                
+                <h1>socsec</h1>
+                <p><strong>sosec</strong> is a command-line toolkit for automated credential testing and HTTP request orchestration on social media platforms. It enables structured interaction with platform endpoints through configurable workflows and input datasets. sosec supports Linux and Windows environments.</p>
+
+                <div class="warning-box">
+                    This project is intended for educational and authorized testing purposes only. Do not perform actions on accounts or services without explicit permission.
+                </div>
+
+                <h2>Documentation Links</h2>
+                <ul>
+                    <li><a href="https://github.com/samueleamato/sosec#installation" target="_blank">Installation</a></li>
+                    <li><a href="https://github.com/samueleamato/sosec#quick-start" target="_blank">Quick Start</a></li>
+                    <li><a href="https://github.com/samueleamato/sosec#contributing" target="_blank">Contributing</a></li>
+                    <li><a href="https://github.com/samueleamato/sosec#community" target="_blank">Community</a></li>
+                </ul>
+
+                <p>Licensed under MIT License.</p>
+
+                <h2>Installation</h2>
+                <p>If you are on <strong>Linux</strong>, you can install sosec with the following command:</p>
+                <div class="terminal">
+                    <code>git clone https://github.com/samueleamato/sosec && cd sosec && bash setup.sh<span class="cursor"></span></code>
+                </div>
+
+                <p>If you are on <strong>Windows</strong>, you can install sosec with the following command:</p>
+                <div class="terminal">
+                    <code>powershell -Command "Invoke-WebRequest -Uri https://github.com/samueleamato/sosec/archive/refs/heads/main.zip -OutFile main.zip; Expand-Archive main.zip -DestinationPath .; cd .\sosec-main\cmd; pip install -r requirements.txt; cd ..; start windows.bat"<span class="cursor"></span></code>
+                </div>
+
+                <h2>Quick Start</h2>
+                <p>Run the TUI interface:</p>
+                <div class="terminal">
+                    <code>python3 sosec.py<span class="cursor"></span></code>
+                </div>
+                <p>The interface will guide you through module selection and configuration directly from the terminal.</p>
+
+                <h2>Basic Workflow</h2>
+                <ol>
+                    <li>Launch the TUI.</li>
+                    <li>Choose the target platform.</li>
+                    <li>Provide required inputs when prompted.</li>
+                    <li>Review output directly in the terminal.</li>
+                </ol>
+
+                <h2>Contributing & Community</h2>
+                <p>Contributions are welcome. Please open an issue to discuss major changes before submitting a pull request.</p>
+                <p>Join the official Discord server to discuss issues, get help, or contribute.</p>
+                
+                <p><br><strong>For more info, visit the repository:</strong><br>
+                <a href="https://github.com/samueleamato/sosec" target="_blank">https://github.com/samueleamato/sosec</a></p>
+                
+                <br><br><br> </div>
+        </div>
+    </div>
+
+</body>
+</html>
