@@ -1,4 +1,4 @@
-/* 1. Importa il font scaricato da DaFont */
+/* 1. Importa il font */
 @font-face {
     font-family: 'Apple Garamond';
     src: url('./apple-garamond.ttf') format('truetype');
@@ -6,14 +6,25 @@
     font-style: normal;
 }
 
-/* 2. Base del sito */
+/* 2. Impostazioni Globali */
+html {
+    font-size: 18px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
+}
+
+/* 3. Base del sito */
 body {
     font-family: 'Apple Garamond', serif;
     color: #333333;
-    font-size: 1.2rem; /* Leggermente più grande per questo font elegante */
+    font-size: 1.2rem;
     line-height: 1.6;
     margin: 0 auto;
-    max-width: 800px; /* Contiene il testo al centro */
+    max-width: 800px;
     padding: 2rem;
 }
 
@@ -21,40 +32,71 @@ h1 {
     text-align: center;
     font-size: 2.6rem;
     color: #111111;
-    font-weight: normal; /* 300 = Light/Thin, 100 = Extra Thin */
+    font-weight: normal;
     margin-bottom: 2rem;
 }
 
+/* 4. Navigazione principale */
+.nav-links {
+    margin-bottom: 2rem;
+}
 
-/* 4. Stile degli hyperlink */
+.nav-links a {
+    margin: 0 1rem;
+    font-size: 1.3rem;
+}
+
+/* 5. Stile hyperlink standard */
 a {
     text-decoration: underline;
     color: #333333; 
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
-/* 5. Effetto Hover: Rosso Ubuntu */
 a:hover {
-    color: #E95420; 
+    color: #E95420;
 }
 
-html {
-    font-size: 18px; /* Aumenta questo numero (di default è 16). Così TUTTO il sito scala e diventa più grande! */
+/* 6. Separatore minimale (monocolore, allineato alla lista) */
+hr.pixel-divider {
+    border: none;
+    width: 40px; /* Molto corto e minimale */
+    height: 4px; /* Altezza del finto pixel */
+    /* 40px a sinistra serve per allinearlo esattamente ai pallini della lista (il padding standard di <ul>) */
+    margin: 1.2rem 0 1.2rem 40px; 
+    background: repeating-linear-gradient(
+        to right,
+        #aaaaaa 0,
+        #aaaaaa 4px,
+        transparent 4px,
+        transparent 8px
+    );
 }
 
-/* Stile per le immagini con cornice fantasy */
+/* 7. Scritta "read more..." */
+li.no-bullet {
+    list-style-type: none; /* Rimuove il pallino */
+    margin-top: 0.2rem;
+}
+
+a.read-more {
+    font-size: 0.95rem; /* Testo più piccolo */
+    color: #666666; /* Un grigio leggermente più chiaro per farlo sembrare secondario */
+    text-decoration: none; /* Senza sottolineatura di base */
+    font-style: italic; /* Leggermente inclinato, opzionale, rimuovilo se non ti piace */
+}
+
+a.read-more:hover {
+    color: #E95420;
+    text-decoration: underline;
+}
+
+/* 8. Immagini */
 img {
     max-width: 100%;
     height: auto;
-
-
-    /* 3. L'ombra per dare tridimensionalità */
     box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.6);
-
-    /* 4. Arrotonda leggermente gli angoli per togliere l'effetto "digitale" */
     border-radius: 3px;
-
-    /* 5. Un po' di margine per non far appiccicare il testo alla cornice */
     margin: 1.5rem 0;
 }
 
@@ -64,11 +106,28 @@ img.normale {
     border: none;
 }
 
-        /* Nasconde la scrollbar mantenendo lo scroll attivo */
-        html, body {
-            -ms-overflow-style: none;  /* IE e Edge */
-            scrollbar-width: none;  /* Firefox */
-        }
-        html::-webkit-scrollbar, body::-webkit-scrollbar {
-            display: none; /* Chrome, Safari e Opera */
-        }
+
+
+/* 9. Immagine dislocata a destra (fuori dal layout) e senza stile di default */
+.side-image {
+    position: absolute;
+    top: 534px; /* AUMENTATO: sposta l'immagine più in basso (prima era 200px) */
+    right: 36vw; /* AUMENTATO: spinge l'immagine più a sinistra allontanandola dal bordo destro (prima era 2vw) */
+
+    /* GRANDEZZA ENORME */
+    width: 33px;
+    max-width: none;
+
+    /* RIMUOVE GLI EFFETTI DELLE ALTRE IMMAGINI */
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    border: none;
+}
+
+/* Nasconde l'immagine sui telefoni o schermi stretti per evitare disastri grafici */
+@media (max-width: 300px) {
+    .side-image {
+        display: none;
+    }
+}
