@@ -58,16 +58,13 @@ a:hover {
 }
 
 /* 6. Separatore minimale (monocolore, allineato alla lista) */
-hr.pixel-divider {
-    border: none;
-    width: 40px; /* Molto corto e minimale */
-    height: 4px; /* Altezza del finto pixel */
-    /* 40px a sinistra serve per allinearlo esattamente ai pallini della lista (il padding standard di <ul>) */
-    margin: 1.2rem 0 1.2rem 40px; 
+hr.minimal{
+    width: 300px; /* Molto corto e minimale */
+
     background: repeating-linear-gradient(
         to right,
         #aaaaaa 0,
-        #aaaaaa 4px,
+        red 4px,
         transparent 4px,
         transparent 8px
     );
@@ -95,7 +92,7 @@ a.read-more:hover {
 img {
     max-width: 100%;
     height: auto;
-    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.6);
+    /* box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.6); */
     border-radius: 3px;
     margin: 1.5rem 0;
 }
@@ -107,27 +104,3 @@ img.normale {
 }
 
 
-
-/* 9. Immagine dislocata a destra (fuori dal layout) e senza stile di default */
-.side-image {
-    position: absolute;
-    top: 534px; /* AUMENTATO: sposta l'immagine più in basso (prima era 200px) */
-    right: 36vw; /* AUMENTATO: spinge l'immagine più a sinistra allontanandola dal bordo destro (prima era 2vw) */
-
-    /* GRANDEZZA ENORME */
-    width: 33px;
-    max-width: none;
-
-    /* RIMUOVE GLI EFFETTI DELLE ALTRE IMMAGINI */
-    box-shadow: none;
-    border-radius: 0;
-    margin: 0;
-    border: none;
-}
-
-/* Nasconde l'immagine sui telefoni o schermi stretti per evitare disastri grafici */
-@media (max-width: 300px) {
-    .side-image {
-        display: none;
-    }
-}
