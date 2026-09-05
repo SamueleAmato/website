@@ -1,7 +1,7 @@
 /* 1. Importa il font */
 @font-face {
     font-family: 'Apple Garamond';
-    src: url('./apple-garamond.ttf') format('truetype');
+    src: url('./garamond-light.woff2') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
