@@ -38,6 +38,16 @@
         padding: 1px 6px;
         border-radius: 4px;
     }
+/* Ripristina la spaziatura e l'altezza riga default per le liste */
+ul {
+    margin: 1em 0;          /* Ripristina il margine verticale standard del browser */
+    padding-left: 28px;     /* Mantiene il tuo rientro spostato un po' a destra */
+    line-height: normal;    /* Ignora il line-height: 1.4 del body, tornando a quello nativo */
+}
+
+li {
+    line-height: normal;    /* Assicura che i singoli elementi non ereditino altezze modificate */
+}
 </style>
 
 <script>
