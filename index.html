@@ -23,39 +23,6 @@
 <link rel="canonical" href="https://samueleamato.xyz/">
 
 <style>
-    :root {
-        --vimium-background-color: #1d1d1f;
-        --vimium-background-text-color: #e3e3e3;
-        --vimium-foreground-color: #292a2d;
-        --vimium-foreground-text-color: #e8eaed;
-    }
-
-    body {
-        background-color: var(--vimium-background-color);
-        color: var(--vimium-background-text-color);
-        margin: 32px auto;
-        padding: 0 20px;
-        max-width: 760px;
-        font-family: monospace, system-ui, -apple-system, sans-serif;
-    }
-
-    a {
-        color: #0055ff; /* Blu elettrico */
-    }
-
-    a:visited {
-        color: #0055ff;
-    }
-
-    p {
-        margin: 6px 0; /* Spaziatura tra i paragrafi ridotta */
-    }
-
-    ul {
-        margin: 6px 0;
-        padding-left: 28px; /* Liste leggermente indentate a destra */
-    }
-
     pre {
         white-space: pre-wrap;
         white-space: -moz-pre-wrap;
@@ -64,11 +31,9 @@
         word-wrap: break-word;
         overflow-x: auto;
         max-width: 100%;
-        margin: 8px 0;
     }
-
     code {
-        background: var(--vimium-foreground-color);
+        background: #1d2021;
         color: #b8bb26;
         padding: 1px 6px;
         border-radius: 4px;
@@ -90,43 +55,54 @@
     <link rel="icon" type="image/png" href="/favicon.png">
     <style>
         :root {
-            --vimium-background-color: #1d1d1f;
-            --vimium-background-text-color: #e3e3e3;
-            --vimium-foreground-color: #292a2d;
-            --vimium-foreground-text-color: #e8eaed;
+            --vimium-background-color: white;
+            --vimium-background-text-color: black;
+            --vimium-foreground-color: white;
+            --vimium-foreground-text-color: black;
+            --vimium-link-color: blue;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --vimium-background-color: #1d1d1f;
+                --vimium-background-text-color: #e3e3e3;
+                --vimium-foreground-color: #292a2d;
+                --vimium-foreground-text-color: #e8eaed;
+                --vimium-link-color: #8ab4f8;
+            }
         }
 
         body {
             background-color: var(--vimium-background-color);
             color: var(--vimium-background-text-color);
             margin: 32px auto;
-            padding: 0 20px;
-            max-width: 760px;
-            font-family: monospace, system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            line-height: 1.4;
+            font-family: sans-serif;
+            font-size: 12pt;
+            padding: 0 10px;
         }
 
         a {
-            color: #0055ff; /* Blu elettrico */
+            color: var(--vimium-link-color);
         }
 
-        a:visited {
-            color: #0055ff;
-        }
-
+        /* Spaziatura ridotta tra i paragrafi ed elementi adiacenti */
         p {
-            margin: 6px 0; /* Ridotto un po' lo spacing */
+            margin: 0.5em 0;
         }
 
+        /* Spaziatura default della lista con rientro aumentato */
         ul {
-            margin: 6px 0;
-            padding-left: 28px; /* Indentazione a destra */
+            margin: 0.5em 0;
+            padding-left: 28px;
         }
 
         code {
-            background: var(--vimium-foreground-color);
-            color: #b8bb26;
-            padding: 1px 6px;
-            border-radius: 4px;
+            background: rgba(127, 127, 127, 0.15);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
         }
     </style>
 </head>
@@ -157,9 +133,6 @@
     <li><a href="software">software i use</a></li>
     <li><a href="selling">stuff i'm selling</a></li>
 </ul>
-
-<p><code>curl https://samueleamato.xyz</code></p>
-
 </body>
 </html>
 `);
@@ -187,10 +160,10 @@
   [38;5;142mrun:[0m [38;5;223mcurl https://samueleamato.xyz/new | sed 20q[0m [38;5;244mto see the latest news[0m
 
   [38;5;223m┌─About──────────────────────────┐[0m  [38;5;223m┌─Reach me─────────────────────────────────────────┐[0m
-  [38;5;223m│[0m Hi, I'm Samuele, aka rdweii.   [38;5;223m│[0m  [38;5;223m│[0m email     [38;5;109msamuele@samueleamato.xyz[0m               [38;5;223m│[0m
-  [38;5;223m│[0m I'm 20, into computers,        [38;5;223m│[0m  [38;5;223m│[0m github    [38;5;109mgithub.com/samueleamato[0m                [38;5;223m│[0m
+  [38;5;223m│[0m Hi, I'm Samuele, aka rdweii.   [38;5;223m│[0m  [38;5;223m│[0m email     [38;5;109msamuele@samueleamato.xyz[0m                [38;5;223m│[0m
+  [38;5;223m│[0m I'm 20, into computers,        [38;5;223m│[0m  [38;5;223m│[0m github    [38;5;109mgithub.com/samueleamato[0m                 [38;5;223m│[0m
   [38;5;223m│[0m low-level, writing,            [38;5;223m│[0m  [38;5;223m│[0m discord   [38;5;109mdiscord.com/invite/m4madyG7jp[0m          [38;5;223m│[0m
-  [38;5;223m│[0m philosophy, and biology.       [38;5;223m│[0m  [38;5;223m│[0m youtube   [38;5;109myoutube.com/@rdweii[0m                    [38;5;223m│[0m
+  [38;5;223m│[0m philosophy, and biology.       [38;5;223m│[0m  [38;5;223m│[0m youtube   [38;5;109myoutube.com/@rdweii[0m                     [38;5;223m│[0m
   [38;5;223m└────────────────────────────────┘[0m  [38;5;223m└────────────────────────────────────────────────────┘[0m
 
   [38;5;208m❯ News[0m       [38;5;109msamueleamato.xyz/news[0m  [38;5;244m— latest updates[0m
