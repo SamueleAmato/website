@@ -116,6 +116,13 @@ li {
             border-radius: 3px;
             font-family: monospace;
         }
+
+        /* Nasconde l'immagine del gatto e il link blog adiacente sui dispositivi mobili */
+        @media (max-width: 768px) {
+            .hide-on-mobile {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -148,9 +155,9 @@ li {
 </ul>
 
 
-<!-- IMMAGINE AGGIORNATA QUI -->
-<img src="cat.png" width="260" style="position: absolute; bottom: -20px; right: 140px; z-index: 9999;" alt="cat">
-<a style="position: absolute; bottom: -50px; right: 270px; z-index: 9999;" href="blog">blog</a>
+<!-- IMMAGINE E LINK CON CLASSE PER NASCONDERLI SU MOBILE -->
+<img class="hide-on-mobile" src="cat.png" width="260" style="position: absolute; bottom: -20px; right: 140px; z-index: 9999;" alt="cat">
+<a class="hide-on-mobile" style="position: absolute; bottom: -50px; right: 270px; z-index: 9999;" href="blog">blog</a>
 
 </body>
 </html>
@@ -182,7 +189,7 @@ li {
   [38;5;223m│[0m Hi, I'm Samuele, aka rdweii.   [38;5;223m│[0m  [38;5;223m│[0m email     [38;5;109msamuele@samueleamato.xyz[0m                [38;5;223m│[0m
   [38;5;223m│[0m I'm 20, into computers,        [38;5;223m│[0m  [38;5;223m│[0m github    [38;5;109mgithub.com/samueleamato[0m                 [38;5;223m│[0m
   [38;5;223m│[0m low-level, writing,            [38;5;223m│[0m  [38;5;223m│[0m discord   [38;5;109mdiscord.com/invite/m4madyG7jp[0m          [38;5;223m│[0m
-  [38;5;223m│[0m philosophy, and biology.       [38;5;223m│[0m  [38;5;223m│[0m youtube   [38;5;109myoutube.com/@rdweii[0m                     [38;5;223m│[0m
+  [38;5;223m│[0m philosophy, and biology.       [38;5;223m│[0m  [38;5;223m│[0m youtube   [38;5;109myoutube.com/@rdweii[0m                   [38;5;223m│[0m
   [38;5;223m└────────────────────────────────┘[0m  [38;5;223m└────────────────────────────────────────────────────┘[0m
 
   [38;5;208m❯ News[0m       [38;5;109msamueleamato.xyz/news[0m  [38;5;244m— latest updates[0m
